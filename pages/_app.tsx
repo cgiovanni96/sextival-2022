@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider theme={theme}>
         <Global />
-        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

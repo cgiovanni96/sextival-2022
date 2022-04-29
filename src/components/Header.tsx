@@ -20,7 +20,6 @@ const useStyles = () => styles;
 
 const styles = {
   Title: styled.h1`
-    color: ${({ theme }) => theme.palette.white[0]};
     font-size: ${({ theme }) => theme.typo.size.big};
     font-weight: ${({ theme }) => theme.typo.weight.black};
   `,
@@ -31,5 +30,6 @@ const styles = {
     text-align: center;
     font-weight: ${({ theme }) => theme.typo.weight.black};
     font-size: ${({ theme }) => theme.typo.size.detail};
+    color: ${({ theme }) => theme.palette.red[2]};
   `,
 };

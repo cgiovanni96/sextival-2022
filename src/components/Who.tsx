@@ -33,7 +33,7 @@ const Title = styled.h2`
   font-weight: ${({ theme }) => theme.typo.weight.bold};
   text-transform: uppercase;
   color: ${({ theme }) => theme.palette.red[1]};
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
 const CardList = styled(motion.section)`
   margin-top: 1rem;
