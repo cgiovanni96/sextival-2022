@@ -6,6 +6,12 @@ export const Global = createGlobalStyle`
 
     body{ 
         background-color: ${(styled) => styled.theme.palette.red[0]};
-        font-family: ${(styled) => styled.theme.typo.family.main}
+        font-family: ${(styled) => styled.theme.typo.family.main};
+        margin: 0 5%;
+        font-size: ${({ theme }) => theme.typo.size.base};
+        color: ${({ theme }) => theme.typo.color};
+
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 `;

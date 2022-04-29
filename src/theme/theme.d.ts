@@ -16,6 +16,25 @@ declare module "styled-components" {
       family: {
         main: string;
       };
+
+      size: {
+        base: string;
+        detail: string;
+        big: string;
+        huge: string;
+      };
+
+      weight: {
+        regular: number;
+        bold: number;
+        black: number;
+      };
+
+      color: string;
+    };
+
+    gradient: {
+      main: string;
     };
   }
 }

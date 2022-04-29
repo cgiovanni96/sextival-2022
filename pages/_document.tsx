@@ -47,10 +47,10 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: [
-          <>
+          <React.Fragment key={0}>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>,
+          </React.Fragment>,
         ],
       };
     } finally {
