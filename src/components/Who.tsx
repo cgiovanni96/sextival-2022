@@ -11,19 +11,25 @@ export const Who = ({ height }: WhoProps) => {
         <Title>Chi siamo</Title>
       </Box>
 
-      <CardList drag="x" dragConstraints={{ left: -400, right: 200 }}>
+      {/* <CardList drag="x" dragConstraints={{ left: -400, right: 200 }}>
         <Card>
           <span>Il sextival</span>
         </Card>
 
         <Card>
-          <span>Il sextival</span>
+          <span>La Nassa</span>
         </Card>
 
         <Card>
-          <span>Il sextival</span>
+          <span>Gli Ospiti</span>
         </Card>
-      </CardList>
+      </CardList> */}
+
+      <CardListSingle>
+        <CardSingle>
+          <span>Il Sextival</span>
+        </CardSingle>
+      </CardListSingle>
     </div>
   );
 };
@@ -33,7 +39,6 @@ const Title = styled.h2`
   font-weight: ${({ theme }) => theme.typo.weight.bold};
   text-transform: uppercase;
   color: ${({ theme }) => theme.palette.red[1]};
-  margin-top: 1rem;
 `;
 const CardList = styled(motion.section)`
   margin-top: 1rem;
@@ -57,4 +62,14 @@ const Card = styled.div`
     font-weight: ${({ theme }) => theme.typo.weight.bold};
     margin-bottom: 6px;
   }
+`;
+
+const CardListSingle = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const CardSingle = styled.div`
+  flex: 1;
 `;

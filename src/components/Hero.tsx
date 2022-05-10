@@ -1,46 +1,66 @@
-import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import Box from "react-raster";
+import { up } from "styled-breakpoints";
 import styled from "styled-components";
 
-export type HeroProps = {
-  setHeroHeight: (heroHeight: number) => void;
-  isVisible: boolean;
-};
-
-export const Hero = ({ setHeroHeight, isVisible }: HeroProps) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (ref && ref.current) setHeroHeight(ref.current.clientHeight);
-  }, [ref]);
-
+export const Hero = () => {
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <div ref={ref}>
-          <Box cols={[12]} justifyContent="center">
-            <div style={{ marginTop: "-3rem" }}>
-              <Image src="/Hero.svg" alt="Hero" height={400} width={400} />
-            </div>
-          </Box>
+    <HeroContainer>
+      <ImageContainer>
+        <HeroImage src="/Hero.svg" alt="Hero" />
+      </ImageContainer>
 
-          <Box cols={[12]} style={{ marginTop: "-2rem" }}>
-            <Title>Interventi</Title>
-            <Title>Arte</Title>
-            <Title>Musica</Title>
-          </Box>
+      <Text>
+        <TitleContainer>
+          <Title>Interventi</Title>
+          <Title>Arte</Title>
+          <Title>Musica</Title>
+        </TitleContainer>
 
-          <Punchline cols={[12]}>
-            <div>Vieni</div>
-            <span>Al festival sulla salute sessuale</span>
-          </Punchline>
-        </div>
-      )}
-    </AnimatePresence>
+        <Punchline>
+          <PunchlineTitle>Vieni</PunchlineTitle>
+          <PunchlineText>Al festival sulla salute sessuale</PunchlineText>
+        </Punchline>
+      </Text>
+    </HeroContainer>
   );
 };
+
+const HeroContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  ${up("lg")} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+const ImageContainer = styled.div`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+`;
+
+const HeroImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  ${up("lg")} {
+    margin: 5% 0;
+  }
+`;
+
+const TitleContainer = styled.div`
+  margin-top: 2rem;
+`;
+
+const Text = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.palette.white[0]};
@@ -48,9 +68,11 @@ const Title = styled.h1`
   font-weight: ${({ theme }) => theme.typo.weight.black};
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
   text-transform: uppercase;
+  margin-top: -1rem;
 `;
-const Punchline = styled(Box)`
-  width: 75%;
+
+const Punchline = styled.div`
+  width: 100%;
   margin-left: auto;
   text-align: right;
   font-size: ${({ theme }) => theme.typo.size.big};
@@ -58,9 +80,19 @@ const Punchline = styled(Box)`
   font-weight: ${({ theme }) => theme.typo.weight.black};
   text-transform: uppercase;
   padding-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+`;
 
-  & > div {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
-    color: white;
+const PunchlineTitle = styled.span`
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+  color: white;
+`;
+
+const PunchlineText = styled.div`
+  ${up("lg")} {
+    width: 50%;
+    line-height: 1.5rem;
   }
 `;

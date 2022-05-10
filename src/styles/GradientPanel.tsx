@@ -1,52 +1,40 @@
-import { AnimatePresence, useViewportScroll } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import gradient from "/public/gradient.png";
-import { Children } from "../types";
 import { StaticImageData } from "next/image";
 
+import { Children } from "../types";
+
+import gradient from "/public/gradient.png";
+import { up } from "styled-breakpoints";
+
 export type GradientPanelProps = {
-  setPanelHeight?: (panelHeight: number) => void;
-  isVisible: boolean;
+  radius?: boolean;
 } & Children;
 
-export const GradientPanel = ({
-  setPanelHeight,
-  children,
-}: GradientPanelProps) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useViewportScroll();
-  const [scroll, setScroll] = useState(0);
-
-  useEffect(() => {
-    if (!ref) return;
-    setPanelHeight && setPanelHeight(ref.current?.clientHeight || 0);
-  }, [ref]);
-
-  useEffect(() => {
-    return scrollYProgress.onChange((v) => setScroll(v));
-  });
-
+export const GradientPanel = ({ children, radius }: GradientPanelProps) => {
   return (
-    <AnimatePresence>
-      {true && (
-        <Panel ref={ref} image={gradient}>
-          {children}
-        </Panel>
-      )}
-    </AnimatePresence>
+    <Panel image={gradient} radius={radius}>
+      <Internal>{children}</Internal>
+    </Panel>
   );
 };
 
-const Panel = styled.div<{ image: StaticImageData }>`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
+const Panel = styled.div<{ image: StaticImageData; radius?: boolean }>`
+  width: 100vw;
   color: white;
   z-index: -100;
   background-image: url(${(props) => props.image.src});
   background-size: cover;
-  border-radius: 0 0 24px 24px;
+  border-radius: ${(p) => (p.radius ? "0 0 24px 24px" : "")};
+
+  ${up("lg")} {
+    border-radius: none;
+  }
+`;
+
+const Internal = styled.div`
   padding: 0 5%;
+
+  ${up("lg")} {
+    padding: 0 20%;
+  }
 `;

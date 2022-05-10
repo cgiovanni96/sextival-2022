@@ -1,34 +1,40 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { Day1 } from "../data/day";
 
 export const Day = () => {
+  const listRef = useRef<HTMLDivElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [momentWidth, setMomentWidth] = useState(0);
+
+  useEffect(() => {
+    if (cardRef && cardRef.current)
+      setMomentWidth(-cardRef.current.clientWidth);
+  }, [listRef, cardRef]);
+
   return (
-    <div style={{ overflowX: "hidden" }}>
+    <div style={{ overflow: "hidden" }}>
       <Title>Giorno1</Title>
-      <CardList drag="x" dragConstraints={{ left: -400, right: 200 }}>
-        <Card>
-          <Container>
-            <Time>10:00 AM - 11:00 AM</Time>
-            <CardTitle>Sessualita Socialista</CardTitle>
-            <Speaker>Mario Rossi</Speaker>
-          </Container>
-        </Card>
-
-        <Card>
-          <Container>
-            <Time>10:00 AM - 11:00 AM</Time>
-            <CardTitle>Sessualita Socialista</CardTitle>
-            <Speaker>Mario Rossi</Speaker>
-          </Container>
-        </Card>
-
-        <Card>
-          <Container>
-            <Time>10:00 AM - 11:00 AM</Time>
-            <CardTitle>Sessualita Socialista</CardTitle>
-            <Speaker>Mario Rossi</Speaker>
-          </Container>
-        </Card>
+      <CardList
+        drag="x"
+        dragConstraints={{
+          left: momentWidth * (Day1.length - 1),
+          right: -momentWidth / 2,
+        }}
+      >
+        {Day1.map((day) => (
+          <Card ref={cardRef} key={day.id} whileTap={{ scale: 0.9 }}>
+            <Container>
+              <Time>{day.time}</Time>
+              <CardTitle>
+                <Link href={`/talk/${day.id}`}>{day.title}</Link>
+              </CardTitle>
+              <Speaker>{day.author}</Speaker>
+            </Container>
+          </Card>
+        ))}
       </CardList>
     </div>
   );
@@ -45,7 +51,7 @@ const CardList = styled(motion.section)`
   margin-top: 1rem;
   display: flex;
 `;
-const Card = styled.div`
+const Card = styled(motion.div)`
   background: rgba(255, 255, 255, 0.4);
   flex-basis: 250px;
   flex-shrink: 0;

@@ -1,35 +1,37 @@
-import Box from "react-raster";
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Header = () => {
-  const { Title, CTA } = useStyles();
-
   return (
-    <Box as="header" cols={[12]} alignItems="center" marginTop={0.5} controls>
-      <Box as={Title} cols={[6]}>
-        Sextival
-      </Box>
-      <Box cols={[3]} marginLeft={3}>
-        <CTA>Sostieni</CTA>
-      </Box>
-    </Box>
+    <HeaderContainer>
+      <Link href={"/"} passHref>
+        <Title>Sextival</Title>
+      </Link>
+
+      <CTA>Sostieni</CTA>
+    </HeaderContainer>
   );
 };
 
-const useStyles = () => styles;
+const HeaderContainer = styled.header`
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+`;
 
-const styles = {
-  Title: styled.h1`
-    font-size: ${({ theme }) => theme.typo.size.big};
-    font-weight: ${({ theme }) => theme.typo.weight.black};
-  `,
-  CTA: styled.a`
-    background: ${({ theme }) => theme.palette.white[0]};
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    font-weight: ${({ theme }) => theme.typo.weight.black};
-    font-size: ${({ theme }) => theme.typo.size.detail};
-    color: ${({ theme }) => theme.palette.red[2]};
-  `,
-};
+const Title = styled.a`
+  font-size: ${({ theme }) => theme.typo.size.big};
+  font-weight: ${({ theme }) => theme.typo.weight.black};
+`;
+
+const CTA = styled.a`
+  background: ${({ theme }) => theme.palette.white[0]};
+  border-radius: 6px;
+  padding: 1rem 1rem;
+  text-align: center;
+  font-weight: ${({ theme }) => theme.typo.weight.black};
+  font-size: ${({ theme }) => theme.typo.size.detail};
+  color: ${({ theme }) => theme.palette.red[2]};
+`;
