@@ -8,7 +8,6 @@ import gfm from "remark-gfm";
 import { up } from "styled-breakpoints";
 
 const Sextival = ({ data }: { data: string }) => {
-  console.log("hello", data);
   return (
     <>
       <GradientPanel small>
