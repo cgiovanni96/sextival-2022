@@ -67,7 +67,8 @@ const CardListSingle = styled.section`
   padding: 0 5%;
 
   ${up("lg")} {
-    padding: 0 20%;
+    padding: 0 10%;
+    flex-direction: row;
   }
 `;
 
@@ -79,6 +80,11 @@ const CardSingle = styled.div`
   display: flex;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
+
+  ${up("lg")} {
+    margin-left: 2rem;
+    height: 200px;
+  }
 `;
 
 const InfoContainer = styled.div`

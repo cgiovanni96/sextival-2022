@@ -8,26 +8,42 @@ import { up } from "styled-breakpoints";
 
 export type GradientPanelProps = {
   radius?: boolean;
+  small?: boolean;
 } & Children;
 
-export const GradientPanel = ({ children, radius }: GradientPanelProps) => {
+export const GradientPanel = ({
+  children,
+  radius,
+  small,
+}: GradientPanelProps) => {
   return (
-    <Panel image={gradient} radius={radius}>
+    <Panel image={gradient} radius={radius} small={small}>
       <Internal>{children}</Internal>
     </Panel>
   );
 };
 
-const Panel = styled.div<{ image: StaticImageData; radius?: boolean }>`
+const Panel = styled.div<{
+  image: StaticImageData;
+  radius?: boolean;
+  small?: boolean;
+}>`
   width: 100vw;
   color: white;
   z-index: -100;
-  background-image: url(${(props) => props.image.src});
+
+  background: ${(props) =>
+    props.small ? props.theme.gradient.main : "inherit"};
+  background-image: ${(props) =>
+    !props.small ? `url(${props.image.src})` : props.theme.gradient.main};
+
   background-size: cover;
-  border-radius: ${(p) => (p.radius ? "0 0 24px 24px" : "")};
+  border-radius: ${(p) => (p.radius ? "0 0 24px 24px" : "0")};
 
   ${up("lg")} {
-    border-radius: none;
+    border-radius: 0;
+    background-image: none;
+    background: ${({ theme }) => theme.gradient.main};
   }
 `;
 

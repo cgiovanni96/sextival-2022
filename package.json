@@ -14,9 +14,12 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-flex-ready": "^1.3.5",
+    "react-markdown": "^8.0.3",
     "react-raster": "^8.2.1",
+    "remark-gfm": "^3.0.1",
     "styled-breakpoints": "^11.1.0",
     "styled-components": "^5.3.5",
+    "styled-icons": "^10.45.0",
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
