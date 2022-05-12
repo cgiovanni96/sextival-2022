@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 import * as path from "path";
@@ -10,6 +11,10 @@ import { GradientPanel } from "../src/styles/GradientPanel";
 import { PageTitle } from "../src/components/PageTitle";
 
 const Nassa = ({ data }: { data: string }) => {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <>
       <GradientPanel small>
