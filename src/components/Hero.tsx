@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <HeroContainer>
       <ImageContainer>
-        <HeroImage src="/Hero.svg" alt="Hero" />
+        <HeroImage src="/logo.png" alt="Hero" />
       </ImageContainer>
 
       <Text>
@@ -51,9 +51,7 @@ const HeroImage = styled.img`
   }
 `;
 
-const TitleContainer = styled.div`
-  margin-top: 2rem;
-`;
+const TitleContainer = styled.div``;
 
 const Text = styled.div`
   flex: 1;

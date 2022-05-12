@@ -24,14 +24,19 @@ const HeaderContainer = styled.header`
 const Title = styled.a`
   font-size: ${({ theme }) => theme.typo.size.big};
   font-weight: ${({ theme }) => theme.typo.weight.black};
+  text-transform: uppercase;
+  & img {
+    width: 100px;
+    height: auto;
+  }
 `;
 
 const CTA = styled.a`
   background: ${({ theme }) => theme.palette.white[0]};
   border-radius: 6px;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
-  font-weight: ${({ theme }) => theme.typo.weight.black};
+  font-weight: ${({ theme }) => theme.typo.weight.bold};
   font-size: ${({ theme }) => theme.typo.size.detail};
   color: ${({ theme }) => theme.palette.red[2]};
 `;
