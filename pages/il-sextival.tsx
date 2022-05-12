@@ -6,6 +6,7 @@ import * as path from "path";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import { up } from "styled-breakpoints";
+import { PageTitle } from "../src/components/PageTitle";
 
 const Sextival = ({ data }: { data: string }) => {
   return (
@@ -13,7 +14,7 @@ const Sextival = ({ data }: { data: string }) => {
       <GradientPanel small>
         <Header />
 
-        <Title>{"Cos'è il Sextival"}</Title>
+        <PageTitle>il Sextival</PageTitle>
       </GradientPanel>
 
       <SextivalContainer>
@@ -54,20 +55,16 @@ const SextivalContainer = styled.section`
     margin: 1rem 0;
   }
 
+  & em {
+    font-style: italic;
+  }
+
+  & strong {
+    font-weight: bold;
+  }
+
   & ul {
     list-style: circle;
     margin-left: 2rem;
   }
-`;
-
-const Title = styled.h1`
-  font-size: 48px;
-  font-weight: ${({ theme }) => theme.typo.weight.bold};
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.palette.white[1]};
-  margin-top: 4rem;
-  padding-bottom: 1rem;
 `;

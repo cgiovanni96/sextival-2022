@@ -27,7 +27,7 @@ export const WhoSingle = () => {
         <CardSingle>
           <InfoContainer>
             <Link href={"/gli-ospiti"} passHref>
-              <CardTitle>Gli Ospiti</CardTitle>
+              <CardTitle>Lə Ospiti</CardTitle>
             </Link>
           </InfoContainer>
         </CardSingle>

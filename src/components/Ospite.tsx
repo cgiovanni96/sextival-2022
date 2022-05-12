@@ -23,7 +23,7 @@ export const Ospite = ({ ospite }: OspiteProps) => {
 };
 
 const OspiteContainer = styled.div`
-  background: ${({ theme }) => theme.palette.red[2]};
+  background: ${({ theme }) => theme.palette.red[1]};
   color: white;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -46,6 +46,7 @@ const OspiteHeader = styled.div`
 `;
 
 const OspiteName = styled.h2<{ visible: boolean }>`
+  flex: 1;
   font-weight: ${({ theme }) => theme.typo.weight.bold};
   font-size: 18px;
   margin-bottom: ${(props) => (props.visible ? "0.5rem" : "0")};

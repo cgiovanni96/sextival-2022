@@ -1,34 +1,80 @@
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
+import * as path from "path";
+import fs from "fs";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
+
 import { Header } from "../src/components/Header";
 import { GradientPanel } from "../src/styles/GradientPanel";
+import { PageTitle } from "../src/components/PageTitle";
 
-const Nassa = () => {
+const Nassa = ({ data }: { data: string }) => {
   return (
     <>
       <GradientPanel small>
         <Header />
 
-        <Title>{"La Nassa"}</Title>
+        <PageTitle>{"La Nassa"}</PageTitle>
       </GradientPanel>
+
+      <SextivalContainer>
+        <ReactMarkdown remarkPlugins={[gfm]}>{data}</ReactMarkdown>
+      </SextivalContainer>
     </>
   );
 };
 
 export default Nassa;
 
-const Title = styled.h1`
-  font-size: 32px;
-  font-weight: ${({ theme }) => theme.typo.weight.bold};
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.palette.white[1]};
-  margin-top: 4rem;
-  padding-bottom: 1rem;
+export async function getStaticProps() {
+  const postsDirectory = path.join(process.cwd(), "_info");
+  const files: string[] = fs.readdirSync(postsDirectory);
+  const file = files.find((f) => f.startsWith("nassa"));
+  if (!file) return {};
+  const fullPath = path.join(postsDirectory, file);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  return { props: { data: fileContents } };
+}
 
+const SextivalContainer = styled.section`
+  max-width: 100vw;
+  padding: 0 5%;
+  color: ${(p) => p.theme.palette.blue[1]};
+  margin-bottom: 4rem;
   ${up("lg")} {
-    font-size: 48px;
+    padding: 0 20%;
+  }
+
+  & > * {
+    margin-top: 1rem;
+  }
+
+  & h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  & em {
+    font-style: italic;
+  }
+
+  & ul {
+    list-style: circle;
+    margin-left: 2rem;
+  }
+
+  & ol {
+    list-style: number;
+    margin-left: 2rem;
+  }
+
+  & li {
+    margin-top: 0.3rem;
+  }
+
+  & strong {
+    font-weight: bold;
   }
 `;

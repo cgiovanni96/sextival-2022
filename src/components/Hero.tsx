@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
@@ -5,18 +6,24 @@ import styled from "styled-components";
 export const Hero = () => {
   return (
     <HeroContainer>
-      <ImageContainer>
+      <ImageContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <HeroImage src="/logo.png" alt="Hero" />
       </ImageContainer>
 
       <Text>
         <TitleContainer>
-          <Title>Interventi</Title>
-          <Title>Arte</Title>
-          <Title>Musica</Title>
+          <Title initial={{ x: -200 }} animate={{ x: 0 }}>
+            Interventi
+          </Title>
+          <Title initial={{ x: -200 }} animate={{ x: 0 }}>
+            Arte
+          </Title>
+          <Title initial={{ x: -200 }} animate={{ x: 0 }}>
+            Musica
+          </Title>
         </TitleContainer>
 
-        <Punchline>
+        <Punchline initial={{ x: 200 }} animate={{ x: 0 }}>
           <PunchlineTitle>Vieni</PunchlineTitle>
           <PunchlineText>Al festival sulla salute sessuale</PunchlineText>
         </Punchline>
@@ -35,7 +42,7 @@ const HeroContainer = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   flex: 1;
   width: 100%;
   height: 100%;
@@ -60,7 +67,7 @@ const Text = styled.div`
   justify-content: space-around;
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   color: ${({ theme }) => theme.palette.white[0]};
   font-size: 48px;
   font-weight: ${({ theme }) => theme.typo.weight.black};
@@ -69,7 +76,7 @@ const Title = styled.h1`
   margin-top: -1rem;
 `;
 
-const Punchline = styled.div`
+const Punchline = styled(motion.div)`
   width: 100%;
   margin-left: auto;
   text-align: right;

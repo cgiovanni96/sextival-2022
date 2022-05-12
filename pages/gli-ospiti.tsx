@@ -1,29 +1,20 @@
-import { useEffect, useRef, useState } from "react";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 
 import { Header } from "../src/components/Header";
 import { Ospite } from "../src/components/Ospite";
 import { OspitiDesktop } from "../src/components/OspitiDesktop";
+import { PageTitle } from "../src/components/PageTitle";
 import { ospiti } from "../src/data/ospiti";
 import { GradientPanel } from "../src/styles/GradientPanel";
 
 const Ospiti = () => {
-  const [height, setHeight] = useState(0);
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    headerRef && headerRef.current && setHeight(headerRef.current.clientHeight);
-  }, [headerRef]);
-
   return (
     <>
-      <div ref={headerRef}>
-        <GradientPanel small>
-          <Header />
-          <Title>{"Gli Ospiti"}</Title>
-        </GradientPanel>
-      </div>
+      <GradientPanel small>
+        <Header />
+        <PageTitle>{"Lə Ospiti"}</PageTitle>
+      </GradientPanel>
 
       <OspitiContainerMobile>
         {ospiti.map((o, i) => (
@@ -32,7 +23,7 @@ const Ospiti = () => {
       </OspitiContainerMobile>
 
       <OspitiContainerDesktop>
-        <OspitiDesktop ospiti={ospiti} headerHeight={height} />
+        <OspitiDesktop ospiti={ospiti} />
       </OspitiContainerDesktop>
     </>
   );

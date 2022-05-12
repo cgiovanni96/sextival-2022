@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Ospiti } from "../data/ospiti";
 import { Flex, Item } from "react-flex-ready";
 
-export type OspitiDesktopProps = { ospiti: Ospiti; headerHeight: number };
+export type OspitiDesktopProps = { ospiti: Ospiti };
 
-export const OspitiDesktop = ({ ospiti, headerHeight }: OspitiDesktopProps) => {
-  const [selected, setSelected] = useState(0);
-  const [content, setContent] = useState<string>(ospiti[0].description);
-
-  console.log("HEIHGT", headerHeight);
-
+export const OspitiDesktop = ({ ospiti }: OspitiDesktopProps) => {
   return (
     <Container>
       {ospiti.map((o, i) => (
@@ -34,8 +29,8 @@ const Container = styled(Flex)`
 const Content = styled.div`
   flex: 1;
   height: 100%;
-  background: ${(p) => p.theme.palette.red[1]};
-  color: white;
+  border: 4px solid ${(p) => p.theme.palette.red[1]};
+  color: ${(p) => p.theme.palette.blue[1]};
   padding: 5%;
   min-height: 200px;
   border-radius: 5px;
@@ -45,7 +40,7 @@ const Content = styled.div`
 `;
 
 const OspiteName = styled.h2`
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   font-weight: bold;
 `;
