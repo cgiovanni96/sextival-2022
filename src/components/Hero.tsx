@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 
@@ -43,9 +42,10 @@ const HeroContainer = styled.div`
 `;
 
 const ImageContainer = styled(motion.div)`
-  flex: 1;
+  flex: 1.5;
   width: 100%;
   height: 100%;
+  z-index: -1;
 `;
 
 const HeroImage = styled.img`
@@ -64,7 +64,7 @@ const Text = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 const Title = styled(motion.h1)`
@@ -97,7 +97,7 @@ const PunchlineTitle = styled.span`
 
 const PunchlineText = styled.div`
   ${up("lg")} {
-    width: 50%;
+    width: 70%;
     line-height: 1.5rem;
   }
 `;

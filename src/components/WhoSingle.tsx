@@ -1,6 +1,24 @@
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
-import Link from "next/link";
+import { Card } from "./Card";
+
+const section = [
+  {
+    image: "home-sextival",
+    url: "/il-sextival",
+    title: "Il Sextival",
+  },
+  {
+    image: "home-nassa",
+    url: "/la-nassa",
+    title: "La Nassa",
+  },
+  {
+    image: "home-ospiti",
+    url: "gli-ospiti",
+    title: "Lə Ospiti",
+  },
+];
 
 export const WhoSingle = () => {
   return (
@@ -8,29 +26,9 @@ export const WhoSingle = () => {
       <Title>Chi siamo</Title>
 
       <CardListSingle>
-        <CardSingle>
-          <InfoContainer>
-            <Link href={"/il-sextival"} passHref>
-              <CardTitle>Il Sextival</CardTitle>
-            </Link>
-          </InfoContainer>
-        </CardSingle>
-
-        <CardSingle>
-          <InfoContainer>
-            <Link href={"/la-nassa"} passHref>
-              <CardTitle>La Nassa</CardTitle>
-            </Link>
-          </InfoContainer>
-        </CardSingle>
-
-        <CardSingle>
-          <InfoContainer>
-            <Link href={"/gli-ospiti"} passHref>
-              <CardTitle>Lə Ospiti</CardTitle>
-            </Link>
-          </InfoContainer>
-        </CardSingle>
+        {section.map((s, i) => (
+          <Card key={i} {...s} />
+        ))}
       </CardListSingle>
     </Container>
   );
@@ -70,32 +68,4 @@ const CardListSingle = styled.section`
     padding: 0 10%;
     flex-direction: row;
   }
-`;
-
-const CardSingle = styled.div`
-  flex: 1;
-  flex-basis: 200px;
-  background: ${({ theme }) => theme.palette.red[1]};
-  color: ${({ theme }) => theme.palette.white[1]};
-  display: flex;
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-
-  ${up("lg")} {
-    margin-left: 2rem;
-    height: 200px;
-  }
-`;
-
-const InfoContainer = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  margin-left: 1rem;
-`;
-
-const CardTitle = styled.a`
-  font-size: ${({ theme }) => theme.typo.size.big};
-  font-weight: ${({ theme }) => theme.typo.weight.bold};
-  margin-bottom: 1rem;
 `;

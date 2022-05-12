@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import { Children } from "../types";
 
@@ -18,6 +18,9 @@ export const GradientPanel = ({
 }: GradientPanelProps) => {
   return (
     <Panel image={gradient} radius={radius} small={small}>
+      <Background>
+        <Image src={"/gradient.png"} alt="" layout="fill" />
+      </Background>
       <Internal>{children}</Internal>
     </Panel>
   );
@@ -28,27 +31,44 @@ const Panel = styled.div<{
   radius?: boolean;
   small?: boolean;
 }>`
+  position: relative;
   width: 100vw;
   color: white;
-  z-index: -100;
 
   background: ${(props) =>
     props.small ? props.theme.gradient.main : "inherit"};
-  background-image: ${(props) =>
-    !props.small ? `url(${props.image.src})` : props.theme.gradient.main};
 
   background-size: cover;
   border-radius: ${(p) => (p.radius ? "0 0 24px 24px" : "0")};
 
   ${up("lg")} {
     border-radius: 0;
-    background-image: none;
-    background: ${({ theme }) => theme.gradient.main};
+  }
+`;
+
+const Background = styled.div`
+  position: absolute;
+  z-index: -99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+
+  & > * {
+    pointer-events: none;
+    border-radius: 0 0 24px 24px;
   }
 `;
 
 const Internal = styled.div`
   padding: 0 5%;
+  z-index: 1000;
 
   ${up("lg")} {
     padding: 0 20%;

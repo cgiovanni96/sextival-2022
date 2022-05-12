@@ -8,12 +8,15 @@ export const Header = () => {
         <Title>Sextival</Title>
       </Link>
 
-      <CTA>Sostieni</CTA>
+      <Link href={"https://sostieni.link/31464"} passHref>
+        <CTA>Sostieni</CTA>
+      </Link>
     </HeaderContainer>
   );
 };
 
 const HeaderContainer = styled.header`
+  z-index: 8;
   padding-top: 0.5rem;
   display: flex;
   align-items: center;
@@ -39,4 +42,5 @@ const CTA = styled.a`
   font-weight: ${({ theme }) => theme.typo.weight.bold};
   font-size: ${({ theme }) => theme.typo.size.detail};
   color: ${({ theme }) => theme.palette.red[2]};
+  cursor: pointer;
 `;
