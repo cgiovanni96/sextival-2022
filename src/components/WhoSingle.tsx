@@ -64,8 +64,14 @@ const CardListSingle = styled.section`
   height: 100%;
   padding: 0 5%;
 
-  ${up("lg")} {
+  ${up("xl")} {
     padding: 0 10%;
     flex-direction: row;
+  }
+
+  & > :nth-child(2) {
+    ${up("xl")} {
+      margin: 0 1.5rem;
+    }
   }
 `;

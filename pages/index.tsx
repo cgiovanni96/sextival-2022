@@ -12,8 +12,11 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Sextival</title>
-        <meta name="description" content="Sextivalettə" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Il Festival sulla Salute Sessuale, 25 e 26 Giugno!"
+        />
+        <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
       <GradientPanel radius>

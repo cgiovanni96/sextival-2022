@@ -108,16 +108,6 @@ export const ospiti: Ospiti = [
       "Comitato nato nel 2021 con l'obiettivo di ottenere il riconoscimento da parte del Servizio Sanitario Nazionale di vulvodinia e neuropatia del pudendo come malattie croniche e invalidanti nei Livelli Essenziali di Assistenza (LEA). La proposta di legge è stata depositata alla Camera dei Deputati e al Senato della Repubblica nel maggio 2022.",
   },
   {
-    name: "Lorenzo Gasparrini",
-    description:
-      "Filosofo femminista, scrittore e divulgatore. Conduce seminari, workshop e laboratori in università, centri sociali, aziende, scuole, sindacati, ordini professionali e gruppi auto-organizzati. Pubblica regolarmente su riviste specializzate e non, online e stampate.",
-  },
-  {
-    name: "Emanuela Abbattecola",
-    description:
-      "Professoressa associata dell’Università di Genova, si occupa di Sociologia del Lavoro e Studi di Genere. Ha pubblicato diverse monografie e lavorato su progetti relativi alla tematica della discriminazione delle donne nel mercato del lavoro, le migrazioni, e gli studi di genere.",
-  },
-  {
     name: "Nicola Macchione",
     description:
       "Andrologo ed urologo, con ampia esperienza nei migliori centri di ricerca urologica a livello nazionale ed internazionale. Ha una pagina IG che è diventata una vera e propria community che tratta argomenti legati alla sessualità e alle patologie uro-andrologiche in generale, con l’intento di sfatare i miti riguardanti la sessualità. ",

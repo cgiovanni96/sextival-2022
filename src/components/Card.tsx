@@ -34,8 +34,11 @@ const CardSingle = styled.div`
   border-radius: 0.5rem;
   position: relative;
 
-  ${up("lg")} {
-    margin-left: 2rem;
+  ${up("md")} {
+    flex-basis: 400px;
+  }
+
+  ${up("md")} {
     height: 250px;
   }
 `;
@@ -44,7 +47,7 @@ const InfoContainer = styled.div`
   flex: 1;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   /* align-items: flex-end; */
   margin-left: 1rem;

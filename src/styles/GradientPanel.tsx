@@ -38,7 +38,6 @@ const Panel = styled.div<{
   background: ${(props) =>
     props.small ? props.theme.gradient.main : "inherit"};
 
-  background-size: cover;
   border-radius: ${(p) => (p.radius ? "0 0 24px 24px" : "0")};
 
   ${up("lg")} {

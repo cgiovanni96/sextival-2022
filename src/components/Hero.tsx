@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 
@@ -22,7 +22,7 @@ export const Hero = () => {
           </Title>
         </TitleContainer>
 
-        <Punchline initial={{ x: 200 }} animate={{ x: 0 }}>
+        <Punchline>
           <PunchlineTitle>Vieni</PunchlineTitle>
           <PunchlineText>Al festival sulla salute sessuale</PunchlineText>
         </Punchline>
@@ -58,7 +58,9 @@ const HeroImage = styled.img`
   }
 `;
 
-const TitleContainer = styled.div``;
+const TitleContainer = styled.div`
+  width: 100%;
+`;
 
 const Text = styled.div`
   flex: 1;
@@ -76,7 +78,7 @@ const Title = styled(motion.h1)`
   margin-top: -1rem;
 `;
 
-const Punchline = styled(motion.div)`
+const Punchline = styled.div`
   width: 100%;
   margin-left: auto;
   text-align: right;
@@ -90,12 +92,12 @@ const Punchline = styled(motion.div)`
   flex-direction: column;
 `;
 
-const PunchlineTitle = styled.span`
+const PunchlineTitle = styled(motion.span)`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
   color: white;
 `;
 
-const PunchlineText = styled.div`
+const PunchlineText = styled(motion.span)`
   ${up("lg")} {
     width: 70%;
     line-height: 1.5rem;
