@@ -30,13 +30,13 @@ export const ospiti: Ospiti = [
     name: "Zena Trans",
     description:
       "Progetto del coordinamento Liguria Rainbow. Si occupa di consulenza e sostegno alle persone transgender attraverso colloqui individuali legali e psicologici e attraverso gruppi di auto-aiuto, oltre che di divulgazione scientifica attraverso laboratori e formazione del personale sanitario ed educativo. ",
-    img: "zena-trans.jpg",
+    img: "zena.png",
   },
   {
     name: "Rossella Bianchi",
     description:
       "Scrittrice, poetessa ed ex sex worker transgender di Genova.\\nÈ una delle ultime donne trans appartenenti all’associazione Princesa, fondata da Don Gallo, nata per dare valore e ospitalità alle sex workers genovesi.",
-    img: "rossella-bianchi.jpeg",
+    img: "rossella-2.jpeg",
   },
   {
     name: "Edusex",

@@ -71,6 +71,7 @@ const OspiteImgContainer = styled.div`
 `;
 
 const OspiteName = styled.h2`
+  flex: 1;
   font-size: 22px;
   text-align: center;
   font-weight: bold;
