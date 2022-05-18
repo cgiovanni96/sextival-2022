@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
-      <GradientPanel radius>
+      <GradientPanel radius={true}>
         <Header />
         <Hero />
       </GradientPanel>

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Ospiti } from "../data/ospiti";
 import { Flex, Item } from "react-flex-ready";
+import Image from "next/image";
 
 export type OspitiDesktopProps = { ospiti: Ospiti };
 
@@ -11,7 +12,17 @@ export const OspitiDesktop = ({ ospiti }: OspitiDesktopProps) => {
       {ospiti.map((o, i) => (
         <Item key={i} col={4} gap={1} marginBottom={30} stretch>
           <Content>
-            <OspiteName>{o.name}</OspiteName>
+            <Header>
+              <OspiteImgContainer>
+                <Image
+                  src={`/ospiti/${o.img}`}
+                  alt={o.name}
+                  layout="fill"
+                  loading="lazy"
+                />
+              </OspiteImgContainer>
+              <OspiteName>{o.name}</OspiteName>
+            </Header>
             <OspiteDescription>{o.description}</OspiteDescription>
           </Content>
         </Item>
@@ -37,6 +48,26 @@ const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+`;
+
+const OspiteImgContainer = styled.div`
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background: ${(p) => p.theme.palette.red[2]};
+  margin-right: 1rem;
+  position: relative;
+
+  & img {
+    border-radius: 100%;
+    object-fit: cover;
+  }
 `;
 
 const OspiteName = styled.h2`

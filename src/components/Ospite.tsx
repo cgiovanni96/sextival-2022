@@ -1,8 +1,13 @@
 import { useState } from "react";
 import styled, { ThemeConsumer } from "styled-components";
-import { Ospite as OspiteType } from "../data/ospiti";
-import { ArrowDownCircle as DownIcon } from "styled-icons/feather";
+import {
+  ArrowDownCircle as DownIcon,
+  ArrowUpCircle as UpIcon,
+} from "styled-icons/feather";
 import { up } from "styled-breakpoints";
+import Image from "next/image";
+
+import { Ospite as OspiteType } from "../data/ospiti";
 
 export type OspiteProps = {
   ospite: OspiteType;
@@ -13,9 +18,17 @@ export const Ospite = ({ ospite }: OspiteProps) => {
 
   return (
     <OspiteContainer>
-      <OspiteHeader>
+      <OspiteHeader onClick={() => setVisible(!visible)}>
+        <OspiteImgContainer>
+          <Image
+            src={`/ospiti/${ospite.img}`}
+            alt={ospite.name}
+            layout="fill"
+            loading="lazy"
+          />
+        </OspiteImgContainer>
         <OspiteName visible={visible}>{ospite.name}</OspiteName>
-        <DownIcon size={32} onClick={() => setVisible(!visible)} />
+        {!visible ? <DownIcon size={32} /> : <UpIcon size={32} />}
       </OspiteHeader>
       {visible && <p>{ospite.description}</p>}
     </OspiteContainer>
@@ -43,6 +56,20 @@ const OspiteHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const OspiteImgContainer = styled.div`
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background: ${(p) => p.theme.palette.red[2]};
+  margin-right: 1rem;
+  position: relative;
+
+  & img {
+    border-radius: 100%;
+    object-fit: cover;
+  }
 `;
 
 const OspiteName = styled.h2<{ visible: boolean }>`

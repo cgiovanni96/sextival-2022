@@ -11,20 +11,20 @@ export type CardProps = {
 
 export const Card = ({ image, url, title }: CardProps) => {
   return (
-    <CardSingle>
-      <Background>
-        <Image src={`/${image}.png`} alt="" layout="fill" />
-      </Background>
-      <InfoContainer>
-        <Link href={url} passHref>
+    <Link href={url} passHref>
+      <CardSingle>
+        <Background>
+          <Image src={`/${image}.png`} alt="" layout="fill" />
+        </Background>
+        <InfoContainer>
           <CardTitle>{title}</CardTitle>
-        </Link>
-      </InfoContainer>
-    </CardSingle>
+        </InfoContainer>
+      </CardSingle>
+    </Link>
   );
 };
 
-const CardSingle = styled.div`
+const CardSingle = styled.a`
   flex: 1;
   flex-basis: 200px;
   background: ${({ theme }) => theme.palette.red[1]};
@@ -33,6 +33,7 @@ const CardSingle = styled.div`
   margin-bottom: 2rem;
   border-radius: 0.5rem;
   position: relative;
+  cursor: pointer;
 
   ${up("md")} {
     flex-basis: 400px;
@@ -69,7 +70,7 @@ const Background = styled.div`
   }
 `;
 
-const CardTitle = styled.a`
+const CardTitle = styled.span`
   font-size: ${({ theme }) => theme.typo.size.huge};
   font-weight: ${({ theme }) => theme.typo.weight.bold};
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
