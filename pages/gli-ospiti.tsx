@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 
@@ -11,6 +12,9 @@ import { GradientPanel } from "../src/styles/GradientPanel";
 const Ospiti = ({ ospiti }: { ospiti: Ospiti }) => {
   return (
     <>
+      <Head>
+        <title>Lə Ospiti</title>
+      </Head>
       <GradientPanel small>
         <Header />
         <PageTitle>{"Lə Ospiti"}</PageTitle>
@@ -34,23 +38,6 @@ export function getStaticProps() {
 }
 
 export default Ospiti;
-
-const Title = styled.h1`
-  font-size: 48px;
-  font-weight: ${({ theme }) => theme.typo.weight.bold};
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.palette.white[1]};
-  margin-top: 4rem;
-  padding-bottom: 1rem;
-`;
-
-const i = styled.main`
-  margin-top: 2rem;
-  padding: 0 5%;
-`;
 
 const OspitiContainerMobile = styled.section`
   margin-top: 1rem;

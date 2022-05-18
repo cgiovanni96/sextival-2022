@@ -120,13 +120,13 @@ export const ospiti: Ospiti = [
     name: "Mica Macho",
     description:
       "Collettivo e community milanese nato nell’aprile 2020. Si occupano di ripensare il maschile e la virilità machista, proponendo nuovi e diversi modi di essere maschi attraverso processi di autocoscienza maschile e attraverso le testimonianze dirette degli utenti.",
-    img: "mica-macho.png",
+    img: "mica.png",
   },
   {
     name: "Comitato Vulvodinia e Neuropatia del Pudendo",
     description:
       "Comitato nato nel 2021 con l'obiettivo di ottenere il riconoscimento da parte del Servizio Sanitario Nazionale di vulvodinia e neuropatia del pudendo come malattie croniche e invalidanti nei Livelli Essenziali di Assistenza (LEA). La proposta di legge è stata depositata alla Camera dei Deputati e al Senato della Repubblica nel maggio 2022.",
-    img: "comitato-vulvodinia.jpeg",
+    img: "comitato.png",
   },
   {
     name: "Nicola Macchione",

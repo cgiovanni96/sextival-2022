@@ -30,7 +30,7 @@ export const Ospite = ({ ospite }: OspiteProps) => {
         <OspiteName visible={visible}>{ospite.name}</OspiteName>
         {!visible ? <DownIcon size={32} /> : <UpIcon size={32} />}
       </OspiteHeader>
-      {visible && <p>{ospite.description}</p>}
+      {visible && <OspiteDescription>{ospite.description}</OspiteDescription>}
     </OspiteContainer>
   );
 };
@@ -77,4 +77,8 @@ const OspiteName = styled.h2<{ visible: boolean }>`
   font-weight: ${({ theme }) => theme.typo.weight.bold};
   font-size: 18px;
   margin-bottom: ${(props) => (props.visible ? "0.5rem" : "0")};
+`;
+
+const OspiteDescription = styled.p`
+  margin-top: 1rem;
 `;

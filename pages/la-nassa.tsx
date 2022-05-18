@@ -9,6 +9,7 @@ import gfm from "remark-gfm";
 import { Header } from "../src/components/Header";
 import { GradientPanel } from "../src/styles/GradientPanel";
 import { PageTitle } from "../src/components/PageTitle";
+import Head from "next/head";
 
 const Nassa = ({ data }: { data: string }) => {
   useEffect(() => {
@@ -17,6 +18,9 @@ const Nassa = ({ data }: { data: string }) => {
 
   return (
     <>
+      <Head>
+        <title>La Nassa</title>
+      </Head>
       <GradientPanel small>
         <Header />
 

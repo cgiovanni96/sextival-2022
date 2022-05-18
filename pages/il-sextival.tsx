@@ -7,10 +7,14 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import { up } from "styled-breakpoints";
 import { PageTitle } from "../src/components/PageTitle";
+import Head from "next/head";
 
 const Sextival = ({ data }: { data: string }) => {
   return (
     <>
+      <Head>
+        <title>Il Sextival</title>
+      </Head>
       <GradientPanel small>
         <Header />
 
