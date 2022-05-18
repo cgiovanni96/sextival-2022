@@ -35,7 +35,7 @@ export const ospiti: Ospiti = [
   {
     name: "Rossella Bianchi",
     description:
-      "Scrittrice, poetessa ed ex sex worker transgender di Genova.\\nÈ una delle ultime donne trans appartenenti all’associazione Princesa, fondata da Don Gallo, nata per dare valore e ospitalità alle sex workers genovesi.",
+      "Scrittrice, poetessa ed ex sex worker transgender di Genova.È una delle ultime donne trans appartenenti all’associazione Princesa, fondata da Don Gallo, nata per dare valore e ospitalità alle sex workers genovesi.",
     img: "rossella-2.jpeg",
   },
   {
@@ -107,14 +107,14 @@ export const ospiti: Ospiti = [
   {
     name: "Federico Orecchia",
     description:
-      "Presidente Arcigay Genova, rapallese, infermiere, oggi vive e lavora a Genova, in passato a lungo impegnato nelle attività delle parrocchie di Rapallo e della diocesi di Chiavari.\\nTra le altre attività con Arcigay, ha organizzato in occasione del 13 Gennaio, giornata mondiale per il dialogo tra religioni e omosessualità, incontri e tavole rotonde tra rappresentanti dei culti e mondo LGBTIQ+.",
+      "Presidente Arcigay Genova, rapallese, infermiere, oggi vive e lavora a Genova, in passato a lungo impegnato nelle attività delle parrocchie di Rapallo e della diocesi di Chiavari.Tra le altre attività con Arcigay, ha organizzato in occasione del 13 Gennaio, giornata mondiale per il dialogo tra religioni e omosessualità, incontri e tavole rotonde tra rappresentanti dei culti e mondo LGBTIQ+.",
     img: "federico-orecchia.jpg",
   },
   {
     name: "Arcigay Genova",
     description:
-      "Sezione genovese di Arcigay. Interverranno al sextival con la loro equipe dello sportello legale e accoglienza migranti LGBTIQ+. Lo sportello offre assistenza legale, personale e tecnica alle persone che si rivolgono all'associazione per discriminazioni o percorsi di protezione internazionale da parte dei principali percorsi migratori.",
-    img: "arcigay-genova.png",
+      "Sezione genovese di Arcigay. Interverranno al sextival con la loro equipe dello sportello legale e accoglienza migranti LGBTQIA+. Lo sportello offre assistenza legale, personale e tecnica alle persone che si rivolgono all'associazione per discriminazioni o percorsi di protezione internazionale da parte dei principali percorsi migratori.",
+    img: "arci.jpeg",
   },
   {
     name: "Mica Macho",
