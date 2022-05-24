@@ -1,6 +1,6 @@
 Il progetto **Nassa** nasce nel 2019 a Sestri Levante, per poi espandersi anche a Chiavari l’anno successivo.
 
-**Nassa Rapallo**, nata a febbraio del 2021, è l’ultima delle tre associazioni giovanili ad oggi attiva nel Tigullio. Essa costituisce un centro di vita associativa, apartitico, aconfessionale, a carattere volontario e democratico. Ha durata illimitata e non persegue finalità di lucro.
+**Nassa Rapallo**, nata a febbraio del 2021, è l’ultima delle tre associazioni giovanili ad oggi attive nel Tigullio. Essa costituisce un centro di vita associativa, apartitico, aconfessionale, a carattere volontario e democratico. Ha durata illimitata e non persegue finalità di lucro.
 
 Lo scopo principale dell’Associazione è quello di raccogliere le esigenze dei giovani per costruire progetti e soluzioni che consentano di vivere attivamente il proprio territorio reinventando spazi e luoghi.
 
@@ -15,7 +15,7 @@ I nostri incontri sono rivolti principalmente a:
 
 1. Sviluppare, anche attraverso azioni di sensibilizzazione e progetti educativi in collaborazione con altre organizzazioni, enti e istituzioni scolastiche, il senso di **identità e di appartenenza** alle comunità locali;
 2. Creare spazi di apertura all’**incontro con l’Altro**;
-3. **Valorizzare il patrimonio storico**, artistico, naturalistico e architettonico propo-nendo modalità differenti per viverlo e conoscerlo;
+3. **Valorizzare il patrimonio storico**, artistico, naturalistico e architettonico proponendo modalità differenti per viverlo e conoscerlo;
 4. Far conoscere le **potenzialità** e le attività lavorative esistenti sul territorio anche attraverso collaborazioni con enti e operatori locali;
 5. Promuovere **principi di democrazia, solidarietà e cittadinanza** attiva al fine di elevare la coscienza e la crescita personale della collettività all’incontro con l’Altro.
 

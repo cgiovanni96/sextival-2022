@@ -16,7 +16,7 @@ _“La salute sessuale è uno stato di **benessere** fisico, emotivo, mentale e 
 
 _“La sessualità è un **aspetto centrale dell'essere umano** per tutta la vita e comprende sesso, identità e ruoli di genere, orientamento sessuale, erotismo, piacere, intimità e riproduzione. La sessualità è sperimentata ed espressa in pensieri, fantasie, desideri, credenze, atteggiamenti, valori, comportamenti, pratiche, ruoli e relazioni. Se la sessualità può includere tutte queste dimensioni, non tutte vengono sempre sperimentate o espresse. La sessualità è influenzata dall'interazione di fattori biologici, psicologici, sociali, economici, politici, culturali, etici, legali, storici, religiosi e spirituali. ”_
 
-Come è chiaro da questo, la definizione di sessualità è **molto più ampia** di quello che ci si potrebbe aspettare. Iniziare con politiche dall’approccio positivo - le cosiddette politiche sex positive - in materia di sessualità ha avuto un grande successo nel mitigare problematiche importanti come il tasso di utilizzo dei contraccettivi, che è aumentato dal 55,6% nel 2000 al 61,2% nel 2013 nell'area europea, o il tasso di aborto, che "è sceso da 489 aborti per 1000 nascite a 228 nel 2013.
+Come è chiaro da questo, la definizione di sessualità è **molto più ampia** di quello che ci si potrebbe aspettare. Iniziare con politiche dall’approccio positivo - le cosiddette politiche sex positive - in materia di sessualità ha avuto un grande successo nel mitigare problematiche importanti come il tasso di utilizzo dei contraccettivi, che è aumentato dal 55,6% nel 2000 al 61,2% nel 2013 nell'area europea, o il tasso di aborto, che _"è sceso da 489 aborti per 1000 nascite a 228 nel 2013"_.
 
 # Le sfide contemporanee
 
@@ -30,7 +30,9 @@ Tuttavia, ci sono ancora molte sfide per la SRH (Sexual and Reproductive Health)
 
 Inoltre, secondo il **Report 2019** del Notiziario dell’Istituto Superiore di Sanità, la Liguria si colloca sempre fra le **prime 10 regioni italiane** per il numero di diagnosi di AIDS tra la popolazione, con la provincia di Genova di gran lunga prima rispetto alle altre province della regione.
 
-Il **territorio dell’ASL 4** ha purtroppo ancora molti problemi relativi alla formazione del proprio personale, e alcuni membri del personale medico possono arrivare a far sentire le persone stigmatizzate e in imbarazzo anche solo per una richiesta di informazione. Ciò è dovuto, plausibilmente, a scarsi programmi di formazione del personale e alla mancanza di aggiornamenti relativi alle necessità in ambito di salute sessuale.
+I fondi istituzionali destinati alla formazione del personale medico e sanitario relativamente alla salute sessuale sono ancora molto scarsi, nonostante l’OMS abbia emesso diverse call to action in tal senso. L’Organizzazione ha persino messo a disposizione del pubblico delle forti linee guida sulla _Brief Sexuality Comunication_; tali linee guida sono nate con lo scopo di evitare, nella breve conversazione che si svolge nei momenti di colloquio, stigmatizzazione e senso di disagio nella persona che si rivolge al servizio sanitario per motivi di natura sessuale.
+
+Il personale ASL a livello locale, regionale e nazionale ha purtroppo ancora molti problemi, sia nella comunicazione che nella conoscenza della diversità delle problematiche sessuali.
 
 # Cosa possiamo fare noi? Il Sextival
 
