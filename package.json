@@ -21,7 +21,8 @@
     "styled-breakpoints": "^11.1.0",
     "styled-components": "^5.3.5",
     "styled-icons": "^10.45.0",
-    "styled-reset": "^4.3.4"
+    "styled-reset": "^4.3.4",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "17.0.25",

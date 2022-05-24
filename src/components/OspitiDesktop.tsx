@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Ospiti } from "../data/ospiti";
 import { Flex, Item } from "react-flex-ready";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { Ospiti } from "../data/ospiti";
 
 export type OspitiDesktopProps = { ospiti: Ospiti };
 
@@ -37,17 +39,25 @@ const Container = styled(Flex)`
   height: 100%;
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   flex: 1;
   height: 100%;
-  border: 4px solid ${(p) => p.theme.palette.red[1]};
+  background-color: ${(p) => p.theme.palette.white[1]};
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   color: ${(p) => p.theme.palette.blue[1]};
-  padding: 5%;
+  padding: 5% 10%;
   min-height: 200px;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background: white;
+    transform: translateY(-5px);
+  }
 `;
 
 const Header = styled.div`
@@ -60,7 +70,9 @@ const OspiteImgContainer = styled.div`
   height: 60px;
   width: 60px;
   border-radius: 100%;
-  background: ${(p) => p.theme.palette.red[2]};
+  background: white;
+
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
   margin-right: 1rem;
   position: relative;
 

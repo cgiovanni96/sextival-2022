@@ -23,14 +23,14 @@ export const ospiti: Ospiti = [
   {
     name: "Mattia Piccinini",
     description:
-      "Psicologo, psicoterapeuta, sessuologo in formazione; si occupa di tematiche GSRD (Gender, Sexual and Relationship Diversity) e sex positive, ed è componente del comitato Pari Opportunità dell’Ordine degli psicologi e psicologhe. Co-fondatore di Zena Trans.",
+      "Psicologo, psicoterapeuta, sessuologo in formazione; è componente del comitato Pari Opportunità dell’Ordine degli psicologi e psicologhe e co-fondatore di Zena Trans.",
     img: "mattia-piccinini.png",
   },
   {
     name: "Zena Trans",
     description:
       "Progetto del coordinamento Liguria Rainbow. Si occupa di consulenza e sostegno alle persone transgender attraverso colloqui individuali legali e psicologici e attraverso gruppi di auto-aiuto, oltre che di divulgazione scientifica attraverso laboratori e formazione del personale sanitario ed educativo. ",
-    img: "zena.png",
+    img: "pride.png",
   },
   {
     name: "Rossella Bianchi",

@@ -24,7 +24,7 @@ export const Hero = () => {
 
         <Punchline>
           <PunchlineTitle>Vieni</PunchlineTitle>
-          <PunchlineText>Al festival sulla salute sessuale</PunchlineText>
+          <PunchlineText>Al festival della salute sessuale</PunchlineText>
         </Punchline>
       </Text>
     </HeroContainer>
