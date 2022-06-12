@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
 
 import { Header } from "../src/components/Header";
 import { Hero } from "../src/components/Hero";

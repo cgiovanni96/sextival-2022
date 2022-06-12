@@ -8,7 +8,7 @@ export const Header = () => {
         <Title>Sextival</Title>
       </Link>
 
-      <Link href={"https://sostieni.link/31464"} passHref>
+      <Link href={"/dona"} passHref>
         <CTA>Sostieni</CTA>
       </Link>
     </HeaderContainer>

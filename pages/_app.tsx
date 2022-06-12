@@ -2,7 +2,8 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../src/theme";
 import { Global } from "../src/theme/Global";
-import { Header } from "../src/components/Header";
+
+import "../src/styles/embla.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
