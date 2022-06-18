@@ -80,6 +80,7 @@ const Content = styled.div`
   & img {
     width: 36px;
     height: 36px;
+    margin-left: 1rem;
 
     &:hover {
       cursor: pointer;
