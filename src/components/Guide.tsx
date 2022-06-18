@@ -1,7 +1,28 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { up } from "styled-breakpoints";
+import { client } from "../client";
+import PuffLoader from "react-spinners/PuffLoader";
 
 export const Guide = () => {
+  const [downloading, setDownloading] = useState<boolean>(false);
+  const onClickDownload = async () => {
+    setDownloading(true);
+
+    const { data, error } = await client.storage
+      .from("download")
+      .download("guida.pdf");
+
+    if (!data || error) return;
+    const url = window.URL.createObjectURL(data);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "guida-sextival2022.pdf");
+    document.body.appendChild(link);
+    link.click();
+    setDownloading(false);
+  };
+
   return (
     <Container>
       <Content>
@@ -10,9 +31,15 @@ export const Guide = () => {
           <strong>mappa</strong>, gli <strong>stand</strong> e il{" "}
           <strong>regolamento</strong>!{" "}
         </div>
-        <a href="/download/guida.pdf" download>
-          <img src="/download/download.svg" alt="Scarica" />
-        </a>
+        {!downloading ? (
+          <img
+            onClick={onClickDownload}
+            src="/download/download.svg"
+            alt="Scarica"
+          />
+        ) : (
+          <PuffLoader size={36} color={"#FFF"} />
+        )}
       </Content>
     </Container>
   );
@@ -53,5 +80,9 @@ const Content = styled.div`
   & img {
     width: 36px;
     height: 36px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
