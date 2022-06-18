@@ -5,6 +5,7 @@ import { Header } from "../src/components/Header";
 import { Hero } from "../src/components/Hero";
 import { WhoSingle } from "../src/components/WhoSingle";
 import { GradientPanel } from "../src/styles/GradientPanel";
+import { Guide } from "../src/components/Guide";
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
         <Header />
         <Hero />
       </GradientPanel>
+
+      <Guide />
 
       <WhoSingle />
     </>
