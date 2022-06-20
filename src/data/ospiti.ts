@@ -2,12 +2,6 @@ export type Ospite = { name: string; description: string; img: string };
 export type Ospiti = Array<Ospite>;
 
 export const ospiti: Ospiti = [
-  // {
-  //   name: "WovoStore",
-  //   description:
-  //     "WOVO è una realtà Italiana d'avanguardia dedicata al benessere sessuale con base a Milano. Il loro obiettivo è migliorare la vita sessuale delle persone. La forza di WOVO è lo studio costante della sessuologia che trasformano in contenuti divulgativi gratuiti aiutando più persone possibili ad esplorare la propria sessualità senza tabù.",
-  //   img: "frida-affer.jpg",
-  // },
   {
     name: "Ilaria Gibelli",
     description:
@@ -115,6 +109,12 @@ export const ospiti: Ospiti = [
     description:
       "Sezione genovese di Arcigay. Interverranno al sextival con la loro equipe dello sportello legale e accoglienza migranti LGBTQIA+. Lo sportello offre assistenza legale, personale e tecnica alle persone che si rivolgono all'associazione per discriminazioni o percorsi di protezione internazionale da parte dei principali percorsi migratori.",
     img: "arci.jpeg",
+  },
+  {
+    name: "Gloria Pallotta",
+    description:
+      "Artista e attivista transfemminista. Si occupa di divulgazione in spazi fisici e digitali trattando il tema delle malattie invisibili e questione di genere. Racconta la propria storia rendendola politica.",
+    img: "gloria-pallotta.jpeg",
   },
   {
     name: "Mica Macho",
