@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { up } from "styled-breakpoints";
 import { Sostenitori } from "../src/components/Sostenitori";
 import { PDB } from "../src/components/PDB";
+import { Terzi } from "../src/components/Terzi";
 
 type SheetData = {
   Date: string;
@@ -29,6 +30,7 @@ const Dona = ({ data }: { data: SheetDatas }) => {
     <>
       <Head>
         <title>Chi ci sostiene</title>
+        <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
       <GradientPanel small>
@@ -38,6 +40,9 @@ const Dona = ({ data }: { data: SheetDatas }) => {
 
       <PDB />
       <Container>
+        <Terzi />
+      </Container>
+      <Container lighter>
         <Sostenitori sostenitori={data} />
       </Container>
     </>
@@ -60,7 +65,12 @@ export function getStaticProps() {
   return { props: { data } };
 }
 
-const Container = styled.section`
+type ContainerProps = {
+  lighter?: boolean;
+};
+
+const Container = styled.section<ContainerProps>`
+  background-color: ${(p) => (p.lighter ? "#f5c7cf" : "inherit")};
   margin-top: 1rem;
   width: 100vw;
   height: 100%;

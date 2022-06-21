@@ -42,7 +42,7 @@ const Container = styled.section`
     flex-wrap: wrap;
 
     justify-content: space-around;
-    padding: 1rem 10%;
+    padding: 2rem 10%;
   }
 `;
 

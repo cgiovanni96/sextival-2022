@@ -86,4 +86,8 @@ const Content = styled.div`
       cursor: pointer;
     }
   }
+
+  & span {
+    margin-right: 1rem;
+  }
 `;

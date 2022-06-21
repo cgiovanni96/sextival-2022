@@ -14,6 +14,7 @@ const Ospiti = ({ ospiti }: { ospiti: Ospiti }) => {
     <>
       <Head>
         <title>Lə Ospiti</title>
+        <link rel="icon" href="/logo-ico.ico" />
       </Head>
       <GradientPanel small>
         <Header />

@@ -1,5 +1,6 @@
 .embla {
   position: relative;
+  width: 100%;
 }
 
 .embla__viewport {
@@ -26,9 +27,13 @@
   margin-left: -10px;
 }
 
+.embla__container:first-child {
+  margin-left: 0.5rem;
+}
+
 .embla__slide {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,9 +44,10 @@
 }
 
 .embla__slide__inner {
+  padding: 1rem;
   position: relative;
   overflow: hidden;
-  max-height: 200px;
+  /* max-height: 200px; */
   display: flex;
   flex-direction: column;
   align-items: center;

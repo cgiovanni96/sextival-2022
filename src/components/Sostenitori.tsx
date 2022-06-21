@@ -12,7 +12,7 @@ type Props = {
 export const Sostenitori = ({ sostenitori }: Props) => {
   return (
     <>
-      <Title>Grazie ai sostenitori!</Title>
+      <Title>E grazie a tutti voi!</Title>
       <SostenitoriContainer>
         {sostenitori.map((s, i) => {
           const surname = s.Surname ? " " + s.Surname : "";
@@ -36,6 +36,7 @@ const SostenitoriContainer = styled.section`
 `;
 
 const Title = styled.div`
+  margin-top: 1rem;
   font-weight: bold;
   font-size: ${(s) => s.theme.typo.size.huge};
   margin-bottom: 1rem;
