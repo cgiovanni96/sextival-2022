@@ -2,8 +2,8 @@ import { up } from "styled-breakpoints";
 import styled from "styled-components";
 
 const terzi = [
-  { img: "TOSSINI.png", bigger: false },
-  { img: "DANOIPERVOI.jpg", bigger: false },
+  { img: "TOSSINI.png", bigger: true },
+  { img: "DANOIPERVOI.jpg", bigger: true },
   { img: "NEREIDI.png", bigger: false },
   { img: "anmar.png", bigger: true },
   { img: "DASSO.png", bigger: false },
