@@ -53,7 +53,9 @@ export function getStaticProps() {
   const sheet = file.Sheets[sheetList[0]];
 
   const sheetData: Array<SheetData> = xlsx.utils.sheet_to_json(sheet);
-  const data = sheetData.filter((v) => v.Donation > 14);
+  const data = sheetData.filter(
+    (v) => v.Donation > 14 && v.Reward && v.Reward !== ""
+  );
 
   return { props: { data } };
 }
