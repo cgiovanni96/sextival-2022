@@ -6,6 +6,7 @@ import { Hero } from "../src/components/Hero";
 import { WhoSingle } from "../src/components/WhoSingle";
 import { GradientPanel } from "../src/styles/GradientPanel";
 import { Guide } from "../src/components/Guide";
+import { Brite } from "../src/components/Brite";
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
       </GradientPanel>
 
       <Guide />
+      <Brite />
 
       <WhoSingle />
     </>
