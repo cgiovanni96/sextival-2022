@@ -16,7 +16,7 @@ export const red: MantineColor = [
   "#f6bec5",
   "#ea95a1",
   "#e06b7b",
-  "#d64255",
+  "#DC3B49",
   "#bd293c",
   "#941f2e",
   "#6b1520",

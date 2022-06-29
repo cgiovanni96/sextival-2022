@@ -7,6 +7,7 @@ import { WhoSingle } from "../src/components/WhoSingle";
 import { GradientPanel } from "../src/styles/GradientPanel";
 import { Guide } from "../src/components/Guide";
 import { Brite } from "../src/components/Brite";
+import { Button } from "@mantine/core";
 
 const Home: NextPage = () => {
   return (
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
       </GradientPanel>
 
       <Guide />
+      <Button>Hello</Button>
       {/* <Brite /> */}
 
       <WhoSingle />
