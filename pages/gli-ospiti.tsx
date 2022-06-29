@@ -6,10 +6,14 @@ import { Header } from "../src/components/Header";
 import { Ospite } from "../src/components/Ospite";
 import { OspitiDesktop } from "../src/components/OspitiDesktop";
 import { PageTitle } from "../src/components/PageTitle";
-import { Ospiti, ospiti as ospitiData } from "../src/data/ospiti";
 import { GradientPanel } from "../src/styles/GradientPanel";
+import { getGuests, Guests } from "./api/getGuests";
 
-const Ospiti = ({ ospiti }: { ospiti: Ospiti }) => {
+type Props = {
+  ospiti: Guests;
+};
+
+const Ospiti = ({ ospiti }: { ospiti: Guests }) => {
   return (
     <>
       <Head>
@@ -23,7 +27,7 @@ const Ospiti = ({ ospiti }: { ospiti: Ospiti }) => {
 
       <OspitiContainerMobile>
         {ospiti.map((o) => (
-          <Ospite key={o.img} ospite={o} />
+          <Ospite key={o.id} ospite={o} />
         ))}
       </OspitiContainerMobile>
 
@@ -34,8 +38,10 @@ const Ospiti = ({ ospiti }: { ospiti: Ospiti }) => {
   );
 };
 
-export function getStaticProps() {
-  return { props: { ospiti: ospitiData } };
+export async function getStaticProps() {
+  const ospiti = await getGuests();
+
+  return { props: { ospiti } };
 }
 
 export default Ospiti;

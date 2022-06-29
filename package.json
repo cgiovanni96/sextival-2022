@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/core": "v5.0.0-alpha.13",
+    "@mantine/hooks": "^4.2.11",
+    "@mantine/next": "^4.2.11",
     "@supabase/supabase-js": "^1.35.3",
     "embla-carousel-react": "^6.2.0",
     "framer-motion": "^6.3.3",

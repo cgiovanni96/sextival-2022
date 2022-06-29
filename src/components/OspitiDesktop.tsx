@@ -4,24 +4,21 @@ import { Flex, Item } from "react-flex-ready";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { Ospiti } from "../data/ospiti";
+import { Guests } from "../../pages/api/getGuests";
 
-export type OspitiDesktopProps = { ospiti: Ospiti };
+type Props = {
+  ospiti: Guests;
+};
 
-export const OspitiDesktop = ({ ospiti }: OspitiDesktopProps) => {
+export const OspitiDesktop = ({ ospiti }: Props) => {
   return (
     <Container>
-      {ospiti.map((o, i) => (
-        <Item key={i} col={4} gap={1} marginBottom={30} stretch>
+      {ospiti.map((o) => (
+        <Item key={o.id} col={4} gap={1} marginBottom={30} stretch>
           <Content>
             <Header>
               <OspiteImgContainer>
-                <Image
-                  src={`/ospiti/${o.img}`}
-                  alt={o.name}
-                  layout="fill"
-                  loading="lazy"
-                />
+                <Image src={o.img} alt={o.name} layout="fill" loading="lazy" />
               </OspiteImgContainer>
               <OspiteName>{o.name}</OspiteName>
             </Header>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { up } from "styled-breakpoints";
-import { client } from "../client";
+import { client } from "../../pages/api/client";
 import PuffLoader from "react-spinners/PuffLoader";
 
 export const Guide = () => {
