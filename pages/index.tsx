@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       </GradientPanel>
 
       <Guide />
-      <Brite />
+      {/* <Brite /> */}
 
       <WhoSingle />
     </>

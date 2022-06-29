@@ -55,7 +55,8 @@ const Container = styled.section`
     margin: 2rem 5%;
 
     ${up("lg")} {
-      margin: 2rem 20%;
+      margin: 0 20%;
+      margin-top: 2rem;
     }
   }
 `;

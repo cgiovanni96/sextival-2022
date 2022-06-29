@@ -3,24 +3,23 @@ import styled from "styled-components";
 
 export const Brite = () => {
   return (
-    <Container>
-      <Content>
-        <a href="https://www.eventbrite.it/e/biglietti-edusex-questioni-di-genere-per-bambin-da-8-a-15-anni-368818625437">
-          <div>
-            Iscriviti al laboratorio <strong>Questioni di Genere</strong>
-          </div>
-        </a>
-      </Content>
+    <>
+      <Title>Iscriviti ai laboratori della mattina!</Title>
 
-      <Content>
-        <a href="https://www.eventbrite.it/e/biglietti-edusex-no-no-il-tema-del-consenso-per-ragazz-da-9-a-13-anni-368826007517">
-          <div>
-            Iscriviti al laboratorio{" "}
+      <Container>
+        <Content>
+          <a href="https://www.eventbrite.it/e/biglietti-edusex-questioni-di-genere-per-bambin-da-8-a-15-anni-368818625437">
+            <strong>Questioni di Genere</strong>
+          </a>
+        </Content>
+
+        <Content>
+          <a href="https://www.eventbrite.it/e/biglietti-edusex-no-no-il-tema-del-consenso-per-ragazz-da-9-a-13-anni-368826007517">
             <strong>NO = NO. Il tema del consenso</strong>
-          </div>
-        </a>
-      </Content>
-    </Container>
+          </a>
+        </Content>
+      </Container>
+    </>
   );
 };
 
@@ -30,24 +29,47 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
 
+  ${up("lg")} {
+    flex-direction: row;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
   & > * {
     margin: 1rem 5%;
-
     ${up("lg")} {
-      margin: 1rem 20%;
+      margin: 0;
     }
+  }
+
+  & :first-child {
+    margin-right: 1rem;
+  }
+`;
+
+const Title = styled.h2`
+  font-size: ${({ theme }) => theme.typo.size.big};
+  font-weight: ${({ theme }) => theme.typo.weight.bold};
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.palette.red[1]};
+
+  padding: 0 5%;
+  margin-top: 1rem;
+
+  ${up("lg")} {
+    padding: 0 20%;
   }
 `;
 
 const Content = styled.div`
+  flex: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: ${(p) => p.theme.palette.red[1]};
-  border: 4px solid ${(p) => p.theme.palette.white[1]};
+  justify-content: center;
+  background: ${(p) => p.theme.palette.white[1]};
   box-shadow: 0px 4px 6px rgba(80, 10, 10, 0.13);
   padding: 1rem;
-  color: white;
+  color: ${(p) => p.theme.palette.red[1]};
 
   font-size: 20px;
   border-radius: 8px;
