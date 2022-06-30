@@ -1,13 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Header } from "../src/components/Header";
-import { Hero } from "../src/components/Hero";
-import { WhoSingle } from "../src/components/WhoSingle";
-import { GradientPanel } from "../src/styles/GradientPanel";
-import { Guide } from "../src/components/Guide";
-import { Brite } from "../src/components/Brite";
-import { Button } from "@mantine/core";
+import { Hero } from "@sextival/components/Hero";
 
 const Home: NextPage = () => {
   return (
@@ -21,16 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
-      <GradientPanel radius>
-        <Header />
-        <Hero />
-      </GradientPanel>
-
-      <Guide />
-      <Button>Hello</Button>
-      {/* <Brite /> */}
-
-      <WhoSingle />
+      <Hero />
     </>
   );
 };

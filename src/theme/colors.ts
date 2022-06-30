@@ -62,3 +62,11 @@ export const violet: MantineColor = [
   "#44072c",
   "#1b0012",
 ];
+
+export const gradients = {
+  gradient1:
+    "linear-gradient(338deg, rgba(92,49,131,1) 0%, rgba(93,85,207,1) 14%, rgba(153,97,231,1) 28%, rgba(205,108,117,1) 54%, rgba(224,107,123,1) 82%, rgba(215,81,98,1) 100%)",
+  gradient2:
+    "linear-gradient(338deg, rgba(53,44,106,1) 0%, rgba(205,108,117,1) 30%, rgba(224,107,123,1) 52%, rgba(215,81,98,1) 68%, rgba(220,59,73,1) 100%)",
+  gradient: "linear-gradient(180deg, #2B2659 0%, #DF566B 65.1%, #DC3B49 100%)",
+};
