@@ -38,6 +38,7 @@ export const Hero = () => {
           alt="hero logo"
           layout="fill"
           objectFit="contain"
+          style={{ filter: "drop-shadow(0px 2px 2px rgba(0,0,0,0.2)" }}
         />
       </Box>
 
@@ -82,15 +83,15 @@ export const Hero = () => {
   );
 };
 
-const HeroTitle = ({ text, first }: { text: string; first?: boolean }) => {
+const HeroTitle = ({ text }: { text: string }) => {
   return (
     <Title
       order={1}
       sx={{
         fontSize: "48px",
-        marginTop: !first ? "-1rem" : "none",
+        lineHeight: "40px",
         textTransform: "uppercase",
-        textShadow: "",
+        textShadow: "0px 4px 4px rgba(0, 0, 0, 0.13)",
       }}
     >
       {text}
@@ -117,6 +118,7 @@ const HeroTagline = ({
         lineHeight: "1.4rem",
         marginBottom: first ? ".3rem" : "none",
         textAlign: "right",
+        textShadow: "0px 4px 4px rgba(0, 0, 0, 0.13)",
       }}
     >
       {text}
