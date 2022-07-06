@@ -1,10 +1,8 @@
 import { AppShell, MantineProvider } from "@mantine/core";
-import { Header } from "@sextival/components/Header";
 import type { AppProps } from "next/app";
 
-import "../src/styles/embla.css";
-
-import { mantine } from "../src/theme/mantine";
+import { mantine } from "@sextival/theme/mantine";
+import { Header } from "@sextival/components/Header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

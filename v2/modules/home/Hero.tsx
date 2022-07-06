@@ -2,7 +2,7 @@ import { Box, Title, useMantineTheme } from "@mantine/core";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { gradients } from "src/theme/colors";
+import { gradients } from "@sextival/theme/colors";
 import { Menu, Nassa, Down } from "@sextival/components/icons";
 
 type Props = {
