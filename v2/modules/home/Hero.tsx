@@ -1,13 +1,17 @@
-import { AspectRatio, Box, Title, useMantineTheme } from "@mantine/core";
+import { Box, Title, useMantineTheme } from "@mantine/core";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { gradients } from "src/theme/colors";
+import { Menu, Nassa, Down } from "@sextival/components/icons";
 
-import { Menu } from "./icons/Menu";
-import { Nassa } from "./icons/Nassa";
+type Props = {
+  scrollAction: () => void;
+};
 
-export const Hero = () => {
+export const Hero = ({ scrollAction }: Props) => {
   const theme = useMantineTheme();
+
   return (
     <Box
       sx={{
@@ -21,14 +25,11 @@ export const Hero = () => {
         padding: 20,
       }}
     >
-      <Box sx={{ marginLeft: "auto" }}>
-        <Menu color={theme.colors["sexyred"][4]} />
-      </Box>
-
       <Box
         sx={{
           width: "90%",
-          height: "40%",
+          height: "100%",
+          // height: "40%",
           position: "relative",
         }}
         mx="auto"
@@ -37,7 +38,7 @@ export const Hero = () => {
           src={"/v2/hero-logo.png"}
           alt="hero logo"
           layout="fill"
-          objectFit="contain"
+          objectFit="cover"
           style={{ filter: "drop-shadow(0px 2px 2px rgba(0,0,0,0.2)" }}
         />
       </Box>
@@ -63,7 +64,12 @@ export const Hero = () => {
           justifyContent: "center",
         }}
       >
-        <Nassa />
+        <motion.div
+          animate={{ opacity: 0.5 }}
+          transition={{ repeat: Infinity, duration: 1, repeatType: "mirror" }}
+        >
+          <Nassa />
+        </motion.div>
 
         <Box
           sx={{
@@ -74,9 +80,23 @@ export const Hero = () => {
             color: "#550026",
             fontWeight: "bold",
             zIndex: 2,
+            display: "flex",
+            alignItems: "center",
           }}
         >
           Scopri di più
+          <motion.div
+            animate={{ y: -5 }}
+            transition={{
+              repeat: Infinity,
+              duration: 0.5,
+              repeatType: "mirror",
+            }}
+            style={{ marginLeft: "8px", display: "flex", alignItems: "center" }}
+            onClick={scrollAction}
+          >
+            <Down />
+          </motion.div>
         </Box>
       </Box>
     </Box>

@@ -4,10 +4,10 @@ export const Menu = ({ color }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="32"
+      height="32"
       viewBox="0 0 24 24"
-      fill="none"
+      fill={color ? color : "#FFF"}
       stroke={color ? color : "#FFF"}
       onClick={() => console.log("hello")}
     >
