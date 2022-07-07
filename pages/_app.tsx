@@ -1,4 +1,4 @@
-import { AppShell, MantineProvider } from "@mantine/core";
+import { AppShell, Box, MantineProvider } from "@mantine/core";
 import type { AppProps } from "next/app";
 
 import { mantine } from "@sextival/theme/mantine";
@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       >
         <Header />
-        <Component {...pageProps} />
+        <Box>
+          <Component {...pageProps} />
+        </Box>
       </AppShell>
     </MantineProvider>
   );
