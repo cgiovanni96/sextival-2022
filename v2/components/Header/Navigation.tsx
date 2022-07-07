@@ -9,17 +9,22 @@ const NavigationRoutes = [
   { path: "/", text: "La Nassa" },
 ];
 
-export const Navigation = () => {
+type Props = {
+  isPastHeroSection: boolean | undefined;
+};
+
+export const Navigation = ({ isPastHeroSection }: Props) => {
   const theme = useMantineTheme();
 
   return (
     <Box
       sx={{
-        zIndex: 10,
-        width: "100vw",
-        height: "100vh",
-        color: "black",
-        position: "relative",
+        zIndex: 20,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
         marginTop: "60px",
         display: "flex",
         flexDirection: "column",
@@ -31,8 +36,10 @@ export const Navigation = () => {
           <Anchor
             sx={{
               padding: 20,
-              border: `2px solid  ${theme.colors["sexyblue"][4]}`,
-              color: theme.colors["sexyblue"][4],
+              border: `2px solid  ${
+                isPastHeroSection ? "#FFF" : theme.colors["sexyred"][4]
+              }`,
+              color: isPastHeroSection ? "#FFF" : theme.colors["sexyred"][4],
               marginBottom: "1rem",
               borderRadius: 8,
               fontSize: 20,

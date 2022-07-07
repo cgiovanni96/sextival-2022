@@ -11,11 +11,10 @@ export const Panel = ({ scrollRef, children }: Props) => {
     <Box
       ref={scrollRef ? scrollRef : null}
       sx={{
-        marginTop: "1rem",
+        marginTop: "calc(1rem + 60px)",
         height: "100vh",
-        width: "100vw",
+        maxWidth: "100vw",
         display: "flex",
-        alignItems: "center",
         justifyContent: "center",
       }}
     >

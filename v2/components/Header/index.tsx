@@ -3,9 +3,8 @@ import {
   useViewportSize,
   useWindowScroll,
 } from "@mantine/hooks";
-import { gradients } from "@sextival/theme/colors";
 import { motion, useCycle } from "framer-motion";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 
@@ -15,6 +14,11 @@ export const Header = () => {
   const { height } = useViewportSize();
   const [scroll] = useWindowScroll();
   const [locked, setScrollLocked] = useScrollLock();
+
+  const isPastHeroSection = useMemo(() => {
+    if (scroll.y < height) return false;
+    return true;
+  }, [scroll.y, height]);
 
   return (
     <motion.nav
@@ -37,6 +41,7 @@ export const Header = () => {
       />
 
       <MenuToggle
+        isPastHeroSection={isPastHeroSection}
         isOpen={isOpen}
         toggle={() => {
           setScrollLocked((c) => !c);
@@ -44,7 +49,7 @@ export const Header = () => {
         }}
       />
 
-      {isOpen && <Navigation />}
+      {isOpen && <Navigation isPastHeroSection={isPastHeroSection} />}
     </motion.nav>
   );
 };

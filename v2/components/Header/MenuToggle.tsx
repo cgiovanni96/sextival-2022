@@ -1,28 +1,35 @@
 import { useMantineTheme } from "@mantine/core";
-import { useViewportSize, useWindowScroll } from "@mantine/hooks";
-import { motion } from "framer-motion";
+import { motion, Transition, Variants } from "framer-motion";
 
-const Path = (props: any) => {
+type PathProps = {
+  isOpen: boolean;
+  isPastHeroSection: boolean | undefined;
+  variants: Variants;
+  d?: string;
+  transition?: Transition;
+};
+
+const Path = ({ isOpen, isPastHeroSection, ...props }: PathProps) => {
   const theme = useMantineTheme();
-  const { height } = useViewportSize();
-  const [scroll] = useWindowScroll();
 
   return (
     <motion.path
       fill="transparent"
       strokeWidth="3"
-      stroke={
-        props.isOpen && scroll.y >= height ? "#fff" : theme.colors["sexyred"][4]
-      }
+      stroke={isOpen && isPastHeroSection ? "#fff" : theme.colors["sexyred"][4]}
       strokeLinecap="round"
       {...props}
     />
   );
 };
 
-type Props = { isOpen: boolean; toggle: () => void };
+type Props = {
+  isOpen: boolean;
+  isPastHeroSection: boolean | undefined;
+  toggle: () => void;
+};
 
-export const MenuToggle = ({ isOpen, toggle }: Props) => (
+export const MenuToggle = ({ isOpen, isPastHeroSection, toggle }: Props) => (
   <span
     onClick={toggle}
     style={{
@@ -36,6 +43,7 @@ export const MenuToggle = ({ isOpen, toggle }: Props) => (
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         isOpen={isOpen}
+        isPastHeroSection={isPastHeroSection}
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
           open: { d: "M 3 16.5 L 17 2.5" },
@@ -43,6 +51,7 @@ export const MenuToggle = ({ isOpen, toggle }: Props) => (
       />
       <Path
         isOpen={isOpen}
+        isPastHeroSection={isPastHeroSection}
         d="M 2 9.423 L 20 9.423"
         variants={{
           closed: { opacity: 1 },
@@ -52,6 +61,7 @@ export const MenuToggle = ({ isOpen, toggle }: Props) => (
       />
       <Path
         isOpen={isOpen}
+        isPastHeroSection={isPastHeroSection}
         variants={{
           closed: { d: "M 2 16.346 L 20 16.346" },
           open: { d: "M 3 2.5 L 17 16.346" },

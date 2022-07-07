@@ -15,9 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       >
         <Header />
-        <Box>
-          <Component {...pageProps} />
-        </Box>
+        <Component {...pageProps} />
       </AppShell>
     </MantineProvider>
   );

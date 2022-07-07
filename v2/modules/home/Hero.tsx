@@ -15,7 +15,7 @@ export const Hero = ({ scrollAction }: Props) => {
   return (
     <Box
       sx={{
-        width: "100vw",
+        maxWidth: "100vw",
         height: "100vh",
         backgroundImage: `${gradients.gradient}`,
 
