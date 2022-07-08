@@ -6,7 +6,11 @@ import Hero from "@sextival/modules/home/Hero";
 import Info from "@sextival/modules/home/Info";
 
 const Home: NextPage = () => {
-  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>();
+  const { scrollIntoView: scrollToInfo, targetRef: infoRef } =
+    useScrollIntoView<HTMLDivElement>();
+
+  const { scrollIntoView: scrollToContent, targetRef: contentRef } =
+    useScrollIntoView<HTMLDivElement>();
 
   return (
     <>
@@ -19,9 +23,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
-      <Hero scrollAction={() => scrollIntoView()} />
-
-      <Info scrollRef={targetRef} />
+      <Hero scrollAction={() => scrollToInfo()} />
+      <Info scrollAction={() => scrollToContent()} scrollRef={infoRef} />
     </>
   );
 };

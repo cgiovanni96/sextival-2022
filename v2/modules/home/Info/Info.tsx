@@ -7,11 +7,16 @@ import Guide from "./Guide";
 
 type Props = {
   scrollRef: DivRef;
+  scrollAction: () => void;
 };
 
-const Info = ({ scrollRef }: Props) => {
+const Info = ({ scrollRef, scrollAction }: Props) => {
   return (
-    <Panel scrollRef={scrollRef} sx={{ marginTop: "5px" }}>
+    <Panel
+      scrollAction={scrollAction}
+      scrollRef={scrollRef}
+      sx={{ marginTop: "5px" }}
+    >
       <Guide />
 
       <Space h="xl" />

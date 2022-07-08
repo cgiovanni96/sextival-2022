@@ -1,13 +1,11 @@
-import { Box, Space, Title, useMantineTheme } from "@mantine/core";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { Space } from "@mantine/core";
 
 import { gradients } from "@sextival/theme/colors";
-import { Menu, Nassa, Down } from "@sextival/components/icons";
+import { NassaScroll } from "@sextival/components/NassaScroll";
+import { Panel } from "@sextival/components/Panel";
+
 import { HeroTitle } from "./HeroTitle";
 import { HeroLogo } from "./HeroLogo";
-import { HeroScroll } from "./HeroScroll";
-import { Panel } from "@sextival/components/Panel";
 import { HeroTagline } from "./HeroTagline";
 
 type Props = {
@@ -15,10 +13,10 @@ type Props = {
 };
 
 const Hero = ({ scrollAction }: Props) => {
-  const theme = useMantineTheme();
-
   return (
     <Panel
+      scrollAction={scrollAction}
+      variant="hero"
       sx={{
         backgroundImage: `${gradients.gradient}`,
         color: "white",
@@ -35,8 +33,6 @@ const Hero = ({ scrollAction }: Props) => {
       <Space h={"xl"} />
 
       <HeroTagline />
-
-      <HeroScroll scrollAction={scrollAction} />
     </Panel>
   );
 };

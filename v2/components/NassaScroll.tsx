@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 import { Down, Nassa } from "@sextival/components/icons";
 
-type Props = { scrollAction: () => void };
+type Props = { variant?: "hero" | "default"; scrollAction: () => void };
 
-export const HeroScroll = ({ scrollAction }: Props) => {
+export const NassaScroll = ({ variant = "default", scrollAction }: Props) => {
   return (
     <Box
       mt="auto"
@@ -20,7 +20,10 @@ export const HeroScroll = ({ scrollAction }: Props) => {
         animate={{ opacity: 0.5 }}
         transition={{ repeat: Infinity, duration: 1, repeatType: "mirror" }}
       >
-        <Nassa width={80} />
+        <Nassa
+          width={80}
+          color={variant !== "hero" ? "rgba(85, 0, 38, 0.2)" : undefined}
+        />
       </motion.div>
 
       <Box
