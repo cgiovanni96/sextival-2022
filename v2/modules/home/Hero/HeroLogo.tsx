@@ -27,7 +27,7 @@ export const HeroLogo = () => {
       animate="onscreen"
       sx={{
         width: "90%",
-        height: "100%",
+        height: "400px",
         position: "relative",
       }}
       mx="auto"

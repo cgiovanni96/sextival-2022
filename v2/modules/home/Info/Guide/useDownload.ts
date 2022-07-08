@@ -1,5 +1,5 @@
 import { client } from "pages/api/client";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 type Args = {
   bucket?: "download";
@@ -9,7 +9,7 @@ type Args = {
 export const useDownload = ({ bucket = "download", file }: Args) => {
   const [downloading, setDownloading] = useState<boolean>(false);
 
-  const onClickDownload = async () => {
+  const onClickDownload = useCallback(async () => {
     setDownloading(true);
     const { data, error } = await client.storage.from(bucket).download(file);
 
@@ -21,7 +21,7 @@ export const useDownload = ({ bucket = "download", file }: Args) => {
     document.body.appendChild(link);
     link.click();
     setDownloading(false);
-  };
+  }, [bucket, file]);
 
   return { state: downloading, action: onClickDownload };
 };

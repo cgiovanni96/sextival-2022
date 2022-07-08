@@ -26,13 +26,13 @@ const Hero = ({ scrollAction }: Props) => {
     >
       <HeroLogo />
 
-      <Space w={"md"} />
+      <Space h={"md"} />
 
       <HeroTitle text="INTERVENTi" />
       <HeroTitle text="ARTE" />
       <HeroTitle text="MUSICA" />
 
-      <Space w={"md"} />
+      <Space h={"xl"} />
 
       <HeroTagline />
 
