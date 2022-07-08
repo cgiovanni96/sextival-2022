@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { File, Nassa } from "@sextival/components/icons";
 import { shadows } from "@sextival/theme/shadows";
 
-import { variants } from "./guide.variants";
+import { variants } from "../info.variants";
 import { GuideDownload } from "./GuideDownload";
 
 const Guide = () => {
@@ -18,6 +18,7 @@ const Guide = () => {
       shadow={shadows.box}
       radius="md"
       p="xl"
+      mt={80}
       sx={{
         height: 200,
         color: "#090346",
