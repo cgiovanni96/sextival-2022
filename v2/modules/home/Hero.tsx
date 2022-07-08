@@ -68,7 +68,7 @@ export const Hero = ({ scrollAction }: Props) => {
           animate={{ opacity: 0.5 }}
           transition={{ repeat: Infinity, duration: 1, repeatType: "mirror" }}
         >
-          <Nassa />
+          <Nassa width={80} />
         </motion.div>
 
         <Box

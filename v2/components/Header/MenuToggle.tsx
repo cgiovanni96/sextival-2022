@@ -1,4 +1,4 @@
-import { useMantineTheme } from "@mantine/core";
+import { Box, useMantineTheme } from "@mantine/core";
 import { motion, Transition, Variants } from "framer-motion";
 
 type PathProps = {
@@ -30,43 +30,56 @@ type Props = {
 };
 
 export const MenuToggle = ({ isOpen, isPastHeroSection, toggle }: Props) => (
-  <span
-    onClick={toggle}
-    style={{
+  <Box
+    sx={{
       position: "fixed",
-      top: 20,
-      left: 20,
+      top: 0,
+      right: 0,
+      left: 0,
       zIndex: 10,
-      cursor: "pointer",
+      padding: 20,
+      background: isPastHeroSection && !isOpen ? "#FFF" : "transparent",
+      display: "flex",
+      alignItems: "center",
     }}
   >
-    <svg width="23" height="23" viewBox="0 0 23 23">
-      <Path
-        isOpen={isOpen}
-        isPastHeroSection={isPastHeroSection}
-        variants={{
-          closed: { d: "M 2 2.5 L 20 2.5" },
-          open: { d: "M 3 16.5 L 17 2.5" },
-        }}
-      />
-      <Path
-        isOpen={isOpen}
-        isPastHeroSection={isPastHeroSection}
-        d="M 2 9.423 L 20 9.423"
-        variants={{
-          closed: { opacity: 1 },
-          open: { opacity: 0 },
-        }}
-        transition={{ duration: 0.1 }}
-      />
-      <Path
-        isOpen={isOpen}
-        isPastHeroSection={isPastHeroSection}
-        variants={{
-          closed: { d: "M 2 16.346 L 20 16.346" },
-          open: { d: "M 3 2.5 L 17 16.346" },
-        }}
-      />
-    </svg>
-  </span>
+    <span
+      onClick={toggle}
+      style={{
+        position: "relative",
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <svg width="23" height="23" viewBox="0 0 23 23">
+        <Path
+          isOpen={isOpen}
+          isPastHeroSection={isPastHeroSection}
+          variants={{
+            closed: { d: "M 2 2.5 L 20 2.5" },
+            open: { d: "M 3 16.5 L 17 2.5" },
+          }}
+        />
+        <Path
+          isOpen={isOpen}
+          isPastHeroSection={isPastHeroSection}
+          d="M 2 9.423 L 20 9.423"
+          variants={{
+            closed: { opacity: 1 },
+            open: { opacity: 0 },
+          }}
+          transition={{ duration: 0.1 }}
+        />
+        <Path
+          isOpen={isOpen}
+          isPastHeroSection={isPastHeroSection}
+          variants={{
+            closed: { d: "M 2 16.346 L 20 16.346" },
+            open: { d: "M 3 2.5 L 17 16.346" },
+          }}
+        />
+      </svg>
+    </span>
+  </Box>
 );

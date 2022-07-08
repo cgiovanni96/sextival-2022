@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         sx={{
           main: {
             padding: 0,
+            backgroundColor: "#FBE9EC",
           },
         }}
       >
