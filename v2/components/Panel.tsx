@@ -1,23 +1,24 @@
-import { Box } from "@mantine/core";
+import { Box, Sx } from "@mantine/core";
 import { MutableRefObject } from "react";
 import { Children } from "src/types";
 
 type Props = {
   scrollRef?: MutableRefObject<HTMLDivElement>;
+  sx?: Sx;
 } & Children;
 
-export const Panel = ({ scrollRef, children }: Props) => {
+export const Panel = ({ scrollRef, sx, children }: Props) => {
   return (
     <Box
       ref={scrollRef ? scrollRef : null}
       sx={{
-        marginTop: "5px",
         height: "100vh",
         maxWidth: "100vw",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
+        ...sx,
       }}
-      mx={20}
+      px={20}
     >
       {children}
     </Box>

@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useScrollIntoView } from "@mantine/hooks";
 
-import { Hero } from "@sextival/modules/home/Hero";
-import { Info } from "@sextival/modules/home/Info";
+import Hero from "@sextival/modules/home/Hero";
+import Info from "@sextival/modules/home/Info";
 
 const Home: NextPage = () => {
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>();
