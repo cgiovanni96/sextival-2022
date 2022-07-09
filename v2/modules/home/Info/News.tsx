@@ -1,7 +1,8 @@
+import { Fragment } from "react";
 import { Box, Button, Space, Text, useMantineTheme } from "@mantine/core";
-import { Go } from "@sextival/components/icons/Go";
 import { motion } from "framer-motion";
 
+import { Go } from "@sextival/components/icons/Go";
 import { variants } from "./info.variants";
 
 const Data = [
@@ -19,7 +20,7 @@ export const News = () => {
       variants={variants}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
+      viewport={{ amount: 0.5 }}
       sx={{
         display: "flex",
         width: "100%",
@@ -42,8 +43,8 @@ export const News = () => {
         </Button>
       </Box>
 
-      {Data.map((news) => (
-        <>
+      {Data.map((news, i) => (
+        <Fragment key={i}>
           <Space h="sm" />
 
           <Box sx={{ display: "flex", color: "#550026", alignItems: "center" }}>
@@ -55,7 +56,7 @@ export const News = () => {
             </Box>
             <Go color="#550026" strokeWidth={1.5} />
           </Box>
-        </>
+        </Fragment>
       ))}
     </Box>
   );

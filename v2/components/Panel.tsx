@@ -19,7 +19,7 @@ export const Panel = ({
 }: Props) => {
   return (
     <Box
-      ref={scrollRef ? scrollRef : null}
+      ref={scrollRef}
       sx={{
         height: "100vh",
         maxWidth: "100vw",
