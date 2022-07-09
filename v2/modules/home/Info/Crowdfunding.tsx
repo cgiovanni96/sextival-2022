@@ -60,12 +60,6 @@ export const Crowdfunding = () => {
       <Space h="sm" />
 
       <Text size={14} color="#0C082B">
-        Per organizzare tutto questo, ci sono molte spese ad incombere
-        minacciose sulle nostre ambizioni.
-      </Text>
-      <Space h="sm" />
-
-      <Text size={14} color="#0C082B">
         Per questo, abbiamo lanciato una campagna di crowdfunding.{" "}
         <b>Sostieni il Sextival, e scopri i premi!</b>
       </Text>

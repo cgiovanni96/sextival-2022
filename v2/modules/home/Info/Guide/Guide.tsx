@@ -56,7 +56,7 @@ const Guide = () => {
           weight={500}
           sx={{ flex: 1, lineHeight: 1 }}
         >
-          Scarica la guida al
+          Ecco la guida al
           <Text weight={700} color="#550026" size={22} sx={{ lineHeight: 1.1 }}>
             Sextival 2022
           </Text>

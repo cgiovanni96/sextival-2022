@@ -4,6 +4,7 @@ import { DivRef } from "@sextival/types/react";
 
 import { Crowdfunding } from "./Crowdfunding";
 import Guide from "./Guide";
+import { News } from "./News";
 
 type Props = {
   scrollRef: DivRef;
@@ -22,6 +23,10 @@ const Info = ({ scrollRef, scrollAction }: Props) => {
       <Space h="xl" />
 
       <Crowdfunding />
+
+      <Space h="xl" />
+
+      <News />
     </Panel>
   );
 };
