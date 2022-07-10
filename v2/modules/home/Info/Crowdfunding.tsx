@@ -3,23 +3,14 @@ import { motion } from "framer-motion";
 
 import { Go } from "@sextival/components/icons/Go";
 import { variants } from "./info.variants";
+import { Title } from "@sextival/components/Section/Title";
+import { Section } from "@sextival/components/Section/Section";
 
 export const Crowdfunding = () => {
   const { colors } = useMantineTheme();
 
   return (
-    <Box
-      component={motion.div}
-      variants={variants}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
-      sx={{
-        display: "flex",
-        width: "100%",
-        flexDirection: "column",
-      }}
-    >
+    <Section variants={variants}>
       <Box
         sx={{
           display: "flex",
@@ -27,9 +18,7 @@ export const Crowdfunding = () => {
           alignItems: "center",
         }}
       >
-        <Text size={20} weight={500} color="#550026">
-          Sostienici
-        </Text>
+        <Title text={"Sostienici"} />
 
         <Box
           component={motion.div}
@@ -63,6 +52,6 @@ export const Crowdfunding = () => {
         Per questo, abbiamo lanciato una campagna di crowdfunding.{" "}
         <b>Sostieni il Sextival, e scopri i premi!</b>
       </Text>
-    </Box>
+    </Section>
   );
 };

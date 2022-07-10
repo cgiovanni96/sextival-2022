@@ -22,11 +22,11 @@ const Info = ({ scrollRef, scrollAction }: Props) => {
 
       <Space h="xl" />
 
-      <Crowdfunding />
+      {/* <Crowdfunding /> */}
 
       <Space h="xl" />
 
-      <News />
+      {/* <News /> */}
     </Panel>
   );
 };

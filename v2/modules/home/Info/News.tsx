@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 
 import { Go } from "@sextival/components/icons/Go";
 import { variants } from "./info.variants";
+import { Section } from "@sextival/components/Section/Section";
+import { Title } from "@sextival/components/Section/Title";
 
 const Data = [
   { date: "16/05", title: "Rossella Bianca non partecipara' al Sextival" },
@@ -15,18 +17,7 @@ export const News = () => {
   const { colors } = useMantineTheme();
 
   return (
-    <Box
-      component={motion.div}
-      variants={variants}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount: 0.5 }}
-      sx={{
-        display: "flex",
-        width: "100%",
-        flexDirection: "column",
-      }}
-    >
+    <Section variants={variants}>
       <Box
         sx={{
           display: "flex",
@@ -34,9 +25,7 @@ export const News = () => {
           alignItems: "center",
         }}
       >
-        <Text size={20} weight={500} color="#550026">
-          Notizie dal Sexystaff
-        </Text>
+        <Title text={"Notizie dal Sexystaff"} />
 
         <Button variant="light" onClick={() => console.log("more")}>
           ...
@@ -58,6 +47,6 @@ export const News = () => {
           </Box>
         </Fragment>
       ))}
-    </Box>
+    </Section>
   );
 };
