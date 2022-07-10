@@ -17,19 +17,14 @@ export const News = () => {
 
   return (
     <Section variants={variants}>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Title text={"Notizie dal Sexystaff"} />
-
-        <Button variant="light" onClick={() => console.log("more")}>
-          ...
-        </Button>
-      </Box>
+      <Title
+        text={"Notizie dal Sexystaff"}
+        right={
+          <Button variant="light" onClick={() => console.log("more")}>
+            ...
+          </Button>
+        }
+      />
 
       {Data.map((news, i) => (
         <Fragment key={i}>

@@ -6,39 +6,34 @@ import { variants } from "./info.variants";
 import { Title } from "@sextival/components/Section/Title";
 import Section from "@sextival/components/Section";
 
-export const Crowdfunding = () => {
+const CrowdfundingGo = () => {
   const { colors } = useMantineTheme();
+  return (
+    <Box
+      component={motion.div}
+      animate={{ x: -5 }}
+      transition={{
+        repeat: Infinity,
+        duration: 0.5,
+        repeatType: "mirror",
+      }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        cursos: "ponter",
+        "& svg ": { cursor: "pointer" },
+      }}
+      onClick={() => console.log("hello")}
+    >
+      <Go color={colors["sexyred"][4]} strokeWidth={1.5} size={28} />
+    </Box>
+  );
+};
 
+export const Crowdfunding = () => {
   return (
     <Section variants={variants}>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Title text={"Sostienici"} />
-
-        <Box
-          component={motion.div}
-          animate={{ x: -5 }}
-          transition={{
-            repeat: Infinity,
-            duration: 0.5,
-            repeatType: "mirror",
-          }}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            cursos: "ponter",
-            "& svg ": { cursor: "pointer" },
-          }}
-          onClick={() => console.log("hello")}
-        >
-          <Go color={colors["sexyred"][4]} strokeWidth={1.5} size={28} />
-        </Box>
-      </Box>
+      <Title text={"Sostienici"} right={<CrowdfundingGo />} />
 
       <Space h="xs" />
       <Text size={14} color="#0C082B">
