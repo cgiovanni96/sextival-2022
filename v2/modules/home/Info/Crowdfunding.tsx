@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Go } from "@sextival/components/icons/Go";
 import { variants } from "./info.variants";
 import { Title } from "@sextival/components/Section/Title";
-import { Section } from "@sextival/components/Section/Section";
+import Section from "@sextival/components/Section";
 
 export const Crowdfunding = () => {
   const { colors } = useMantineTheme();

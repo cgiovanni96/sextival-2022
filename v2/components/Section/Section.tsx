@@ -7,7 +7,7 @@ type Props = {
   amount?: number;
 } & Children;
 
-export const Section = ({ variants, children, amount = 0.8 }: Props) => {
+const Section = ({ variants, children, amount = 0.8 }: Props) => {
   return (
     <Box
       component={motion.div}
@@ -25,3 +25,5 @@ export const Section = ({ variants, children, amount = 0.8 }: Props) => {
     </Box>
   );
 };
+
+export default Section;

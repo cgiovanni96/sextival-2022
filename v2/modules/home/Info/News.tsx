@@ -1,10 +1,9 @@
 import { Fragment } from "react";
 import { Box, Button, Space, Text, useMantineTheme } from "@mantine/core";
-import { motion } from "framer-motion";
 
 import { Go } from "@sextival/components/icons/Go";
 import { variants } from "./info.variants";
-import { Section } from "@sextival/components/Section/Section";
+import Section from "@sextival/components/Section";
 import { Title } from "@sextival/components/Section/Title";
 
 const Data = [
