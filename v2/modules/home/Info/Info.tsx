@@ -2,9 +2,8 @@ import { Space } from "@mantine/core";
 import { Panel } from "@sextival/components/Panel";
 import { DivRef } from "@sextival/types/react";
 
-import { Crowdfunding } from "./Crowdfunding";
 import Guide from "./Guide";
-import { News } from "./News";
+import Program from "./Program";
 
 type Props = {
   scrollRef: DivRef;
@@ -21,6 +20,8 @@ const Info = ({ scrollRef, scrollAction }: Props) => {
       <Guide />
 
       <Space h="xl" />
+
+      <Program />
 
       {/* <Crowdfunding /> */}
 
