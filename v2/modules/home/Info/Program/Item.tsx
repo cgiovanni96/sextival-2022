@@ -1,5 +1,5 @@
 import { Carousel } from "@mantine/carousel";
-import { Box, Text } from "@mantine/core";
+import { Avatar, Box, Text } from "@mantine/core";
 import { shadows } from "@sextival/theme/shadows";
 
 type Props = {
@@ -55,28 +55,12 @@ const TimeHeader = ({ time }: { time: string }) => (
 );
 
 const GuestsBox = ({ guests }: { guests: string[] }) => (
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: "space-between",
-      cursor: "pointer",
-    }}
-  >
-    <Box sx={{ display: "flex" }}>
+  <Box sx={{ display: "flex", cursor: "pointer" }}>
+    <Avatar.Group spacing={"md"}>
       {guests.map((g, i) => (
-        <Box
-          key={i}
-          sx={{
-            borderRadius: "100%",
-            background: "rgba(223, 86, 107, 1)",
-            border: "1px solid #FFF",
-            height: 35,
-            width: 35,
-            marginLeft: i ? -20 : "inherit",
-          }}
-        />
+        <Avatar key={i} radius={"xl"} src={null} color="sexyred" />
       ))}
-    </Box>
+    </Avatar.Group>
 
     <Box
       sx={{
@@ -87,7 +71,7 @@ const GuestsBox = ({ guests }: { guests: string[] }) => (
         alignItems: "center",
       }}
     >
-      <Text size={14} color="#DF566B" weight={500} sx={{ lineHeight: 1 }}>
+      <Text size={12} color="#DF566B" sx={{ lineHeight: 1 }}>
         {guests.join(", ")}
       </Text>
     </Box>
