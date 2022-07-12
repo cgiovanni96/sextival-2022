@@ -68,7 +68,7 @@ export const Data: DataType = [
   },
 
   {
-    day: "24/06",
+    day: "26/06",
     program: [
       {
         time: "81:30 - 12:00",
