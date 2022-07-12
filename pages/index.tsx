@@ -4,6 +4,7 @@ import { useScrollIntoView } from "@mantine/hooks";
 
 import Hero from "@sextival/modules/home/Hero";
 import Info from "@sextival/modules/home/Info";
+import Content from "@sextival/modules/home/Content";
 
 const Home: NextPage = () => {
   const { scrollIntoView: scrollToInfo, targetRef: infoRef } =
@@ -25,6 +26,12 @@ const Home: NextPage = () => {
 
       <Hero scrollAction={() => scrollToInfo()} />
       <Info scrollAction={() => scrollToContent()} scrollRef={infoRef} />
+      <Content
+        scrollAction={() => {
+          console.log("hello");
+        }}
+        scrollRef={contentRef}
+      />
     </>
   );
 };

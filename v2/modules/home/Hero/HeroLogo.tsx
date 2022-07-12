@@ -33,7 +33,7 @@ export const HeroLogo = () => {
       mx="auto"
     >
       <Image
-        src={"/v2/hero-logo.png"}
+        src={"/v2/home/hero/hero-logo.png"}
         alt="hero logo"
         layout="fill"
         objectFit="contain"
