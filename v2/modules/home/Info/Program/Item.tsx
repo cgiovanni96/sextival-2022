@@ -1,11 +1,14 @@
 import { Carousel } from "@mantine/carousel";
-import { Avatar, Box, Text } from "@mantine/core";
+import { Avatar, Box, Button, Modal, Text } from "@mantine/core";
+import { useToggle } from "@mantine/hooks";
+import { motion } from "framer-motion";
+
 import { shadows } from "@sextival/theme/shadows";
 
 type Props = {
   time: string;
   title: string;
-  guests: string[];
+  guests: Array<{ name: string; img?: string }>;
 };
 
 export const Item = ({ time, title, guests }: Props) => {
@@ -54,26 +57,73 @@ const TimeHeader = ({ time }: { time: string }) => (
   </Box>
 );
 
-const GuestsBox = ({ guests }: { guests: string[] }) => (
-  <Box sx={{ display: "flex", cursor: "pointer" }}>
-    <Avatar.Group spacing={"md"}>
-      {guests.map((g, i) => (
-        <Avatar key={i} radius={"xl"} src={null} color="sexyred" />
-      ))}
-    </Avatar.Group>
+const GuestsBox = ({
+  guests,
+}: {
+  guests: Array<{ name: string; img?: string }>;
+}) => {
+  const [modal, toggleModal] = useToggle([false, true]);
 
-    <Box
-      sx={{
-        marginLeft: 5,
-        display: "flex",
-        flexWrap: "wrap",
-        flex: 1,
-        alignItems: "center",
-      }}
-    >
-      <Text size={12} color="#DF566B" sx={{ lineHeight: 1 }}>
-        {guests.join(", ")}
-      </Text>
-    </Box>
-  </Box>
-);
+  return (
+    <>
+      <Box
+        sx={{ display: "flex", cursor: "pointer" }}
+        onClick={() => toggleModal()}
+      >
+        <Avatar.Group spacing={"md"}>
+          {guests.map((g, i) => (
+            <Avatar key={i} radius={"xl"} src={g.img} color="sexyred" />
+          ))}
+        </Avatar.Group>
+
+        <Box
+          sx={{
+            marginLeft: 5,
+            display: "flex",
+            flexWrap: "wrap",
+            flex: 1,
+            alignItems: "center",
+          }}
+        >
+          <Text size={12} color="#DF566B" sx={{ lineHeight: 1 }}>
+            {guests.map((g) => g.name).join(", ")}
+          </Text>
+        </Box>
+      </Box>
+
+      <Modal
+        opened={modal}
+        onClose={() => toggleModal()}
+        fullScreen
+        title={"Ospiti"}
+      >
+        <Box
+          component={motion.div}
+          transition={{ delay: 0.3 }}
+          sx={{ display: "flex", flexDirection: "column" }}
+        >
+          {guests.map((g, i) => (
+            <Box
+              component={motion.div}
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: i * 0.1, type: "spring" }}
+              key={g.name}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: 30,
+              }}
+            >
+              <Avatar radius="xl" src={g.img} color="sexyred" size="md" />
+              <Text size={20} sx={{ flex: 1, marginLeft: 20 }}>
+                {g.name}
+              </Text>
+              <Button>Vai</Button>
+            </Box>
+          ))}
+        </Box>
+      </Modal>
+    </>
+  );
+};
