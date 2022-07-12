@@ -1,5 +1,8 @@
-import { Carousel } from "@mantine/carousel";
+import { useEffect, useState } from "react";
+import { Carousel, Embla } from "@mantine/carousel";
+
 import { ProgramType } from "./data.mock";
+
 import { Item } from "./Item";
 
 type Props = {
@@ -7,6 +10,12 @@ type Props = {
 };
 
 export const List = ({ program }: Props) => {
+  const [embla, setEmbla] = useState<Embla | undefined>(undefined);
+
+  useEffect(() => {
+    embla?.scrollTo(0);
+  }, [program]);
+
   return (
     <Carousel
       withControls={false}
@@ -14,8 +23,10 @@ export const List = ({ program }: Props) => {
       align="start"
       slideSize="66%"
       slideGap="md"
+      getEmblaApi={setEmbla}
       sx={{ paddingBottom: 50 }}
       styles={{
+        container: {},
         indicator: {
           background: "#DF566B",
           width: 12,
