@@ -20,14 +20,17 @@ export const Panel = ({
   return (
     <Box
       ref={scrollRef}
-      sx={{
+      sx={(theme) => ({
         height: "100vh",
         maxWidth: "100vw",
         display: "flex",
         flexDirection: "column",
+        padding: "0 20px",
         ...sx,
-      }}
-      px={20}
+        [`@media (min-width: ${theme.breakpoints.lg}px)`]: {
+          padding: "0 10%",
+        },
+      })}
     >
       {children}
 
