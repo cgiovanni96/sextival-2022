@@ -1,5 +1,6 @@
 import { Box } from "@mantine/core";
-import { motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import { useState } from "react";
 import { Children } from "src/types";
 
 type Props = {
@@ -12,9 +13,9 @@ const Section = ({ variants, children, amount = 0.8 }: Props) => {
     <Box
       component={motion.div}
       variants={variants}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount }}
+      initial={"offscreen"}
+      whileInView={"onscreen"}
+      viewport={{ once: true, amount }}
       sx={{
         display: "flex",
         width: "100%",

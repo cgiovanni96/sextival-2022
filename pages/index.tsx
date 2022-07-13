@@ -5,6 +5,12 @@ import { useScrollIntoView } from "@mantine/hooks";
 import Hero from "@sextival/modules/home/Hero";
 import Info from "@sextival/modules/home/Info";
 import Content from "@sextival/modules/home/Content";
+import { Children } from "src/types";
+import { Box } from "@mantine/core";
+
+const ScrollContainer = ({ children }: Children) => {
+  return <Box sx={{ scrollSnapType: "y mandatory" }}>{children}</Box>;
+};
 
 const Home: NextPage = () => {
   const { scrollIntoView: scrollToInfo, targetRef: infoRef } =
@@ -24,14 +30,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
-      <Hero scrollAction={() => scrollToInfo()} />
-      <Info scrollAction={() => scrollToContent()} scrollRef={infoRef} />
-      <Content
-        scrollAction={() => {
-          console.log("hello");
-        }}
-        scrollRef={contentRef}
-      />
+      <ScrollContainer>
+        <Hero scrollAction={() => scrollToInfo()} />
+        <Info scrollAction={() => scrollToContent()} scrollRef={infoRef} />
+        <Content
+          scrollAction={() => {
+            console.log("hello");
+          }}
+          scrollRef={contentRef}
+        />
+      </ScrollContainer>
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Paper, Box, Text } from "@mantine/core";
 import { motion } from "framer-motion";
 
@@ -14,7 +15,7 @@ const Guide = () => {
       variants={variants}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
+      viewport={{ once: true, amount: 0.8 }}
       shadow={shadows.box}
       radius="md"
       p="xl"
