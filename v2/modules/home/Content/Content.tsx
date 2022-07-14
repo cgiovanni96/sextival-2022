@@ -1,18 +1,13 @@
-import { Panel } from "@sextival/components/Panel";
+import Panel from "@sextival/components/Panel";
 import { DivRef } from "@sextival/types/react";
 
 type Props = {
-  scrollRef: DivRef;
-  scrollAction: () => void;
+  order: number;
 };
 
-const Content = ({ scrollRef, scrollAction }: Props) => {
+const Content = ({ order = 3 }: Props) => {
   return (
-    <Panel
-      scrollRef={scrollRef}
-      scrollAction={scrollAction}
-      sx={{ marginTop: "5px" }}
-    >
+    <Panel order={order} scrollDown sx={{ marginTop: "5px" }}>
       <span>Hello</span>
     </Panel>
   );

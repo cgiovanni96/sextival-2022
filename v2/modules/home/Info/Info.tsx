@@ -1,22 +1,17 @@
 import { Space } from "@mantine/core";
-import { Panel } from "@sextival/components/Panel";
+import Panel from "@sextival/components/Panel";
 import { DivRef } from "@sextival/types/react";
 
 import Guide from "./Guide";
 import Program from "./Program";
 
 type Props = {
-  scrollRef: DivRef;
-  scrollAction: () => void;
+  order: number;
 };
 
-const Info = ({ scrollRef, scrollAction }: Props) => {
+const Info = ({ order = 2 }: Props) => {
   return (
-    <Panel
-      scrollAction={scrollAction}
-      scrollRef={scrollRef}
-      sx={{ marginTop: "5px" }}
-    >
+    <Panel order={order} scrollDown sx={{ marginTop: "5px" }}>
       <Guide />
 
       <Space h="xl" />

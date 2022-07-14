@@ -1,22 +1,22 @@
 import { Space } from "@mantine/core";
 
 import { gradients } from "@sextival/theme/colors";
-import { NassaScroll } from "@sextival/components/NassaScroll";
-import { Panel } from "@sextival/components/Panel";
+import Panel from "@sextival/components/Panel";
 
 import { HeroTitle } from "./HeroTitle";
 import { HeroLogo } from "./HeroLogo";
 import { HeroTagline } from "./HeroTagline";
 
 type Props = {
-  scrollAction: () => void;
+  order: number;
 };
 
-const Hero = ({ scrollAction }: Props) => {
+const Hero = ({ order = 1 }: Props) => {
   return (
     <Panel
-      scrollAction={scrollAction}
+      order={order}
       variant="hero"
+      scrollDown
       sx={{
         backgroundImage: `${gradients.gradient}`,
         color: "white",
