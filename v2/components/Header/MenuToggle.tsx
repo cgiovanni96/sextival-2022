@@ -38,7 +38,7 @@ export const MenuToggle = ({ isOpen, isPastHeroSection, toggle }: Props) => (
       left: 0,
       zIndex: 10,
       padding: 20,
-      background: isPastHeroSection && !isOpen ? "#FFF" : "transparent",
+      background: isPastHeroSection && !isOpen ? "#F9DDE1" : "transparent",
       display: "flex",
       alignItems: "center",
     }}
