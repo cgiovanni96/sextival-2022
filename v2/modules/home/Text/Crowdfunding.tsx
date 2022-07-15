@@ -2,7 +2,7 @@ import { Box, Space, Text, useMantineTheme } from "@mantine/core";
 import { motion } from "framer-motion";
 
 import { Go } from "@sextival/components/icons/Go";
-import { variants } from "./info.variants";
+import { variants } from "../Info/info.variants";
 import { Title } from "@sextival/components/Section/Title";
 import Section from "@sextival/components/Section";
 
@@ -32,7 +32,7 @@ const CrowdfundingGo = () => {
 
 export const Crowdfunding = () => {
   return (
-    <Section variants={variants}>
+    <Section variants={variants} sx={{ marginTop: 70 }}>
       <Title text={"Sostienici"} right={<CrowdfundingGo />} />
 
       <Space h="xs" />

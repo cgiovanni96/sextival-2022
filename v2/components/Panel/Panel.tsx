@@ -30,6 +30,7 @@ const Panel = ({
         flexDirection: "column",
         padding: "0 20px",
         position: "relative",
+        marginTop: variant === "default" ? 5 : 0,
         ...sx,
         [`@media (min-width: ${theme.breakpoints.lg}px)`]: {
           padding: "0 10%",
@@ -47,7 +48,7 @@ const Panel = ({
         <NassaScroll
           variant={variant}
           scrollAction={() => {
-            moveTo({ order: order + 1 });
+            moveTo({ order: order + 1, direction: "down" });
           }}
         />
       )}

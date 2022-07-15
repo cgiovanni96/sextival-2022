@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Box, Button, Space, Text, useMantineTheme } from "@mantine/core";
 
 import { Go } from "@sextival/components/icons/Go";
-import { variants } from "./info.variants";
+import { variants } from "../Info/info.variants";
 import Section from "@sextival/components/Section";
 import { Title } from "@sextival/components/Section/Title";
 

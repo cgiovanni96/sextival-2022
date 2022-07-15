@@ -7,14 +7,10 @@ import { HeroTitle } from "./HeroTitle";
 import { HeroLogo } from "./HeroLogo";
 import { HeroTagline } from "./HeroTagline";
 
-type Props = {
-  order: number;
-};
-
-const Hero = ({ order = 1 }: Props) => {
+const Hero = () => {
   return (
     <Panel
-      order={order}
+      order={1}
       variant="hero"
       scrollDown
       sx={{

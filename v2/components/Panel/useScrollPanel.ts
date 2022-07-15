@@ -8,7 +8,7 @@ import useScrollStore from "@sextival/stores/ScrollStore";
 import { useEffect } from "react";
 
 export const useScrollPanel = ({ order = 1 }) => {
-  const { ref, entry } = useIntersection({ threshold: 0.5 });
+  const { ref, entry } = useIntersection({ threshold: 1 });
   const [_, scrollTo] = useWindowScroll();
   const { height } = useViewportSize();
 
@@ -16,11 +16,20 @@ export const useScrollPanel = ({ order = 1 }) => {
 
   const { start: resetAuto } = useTimeout(() => {
     scrollStore.setStatus("idle");
-  }, 800);
+  }, 1000);
 
-  const moveTo = ({ order = 1, direction = "down" }) => {
-    const yAdd = direction === "down" ? 3 * order - 1 : order !== 1 ? 2 : 0;
-    const position = height * (order - 1) + yAdd;
+  const getY = (direction: "up" | "down", order: number): number => {
+    return direction === "down" ? 3 * order : order !== 1 ? 6 : 0;
+  };
+
+  const moveTo = ({
+    order = 1,
+    direction,
+  }: {
+    order: number;
+    direction: "down" | "up";
+  }) => {
+    const position = height * (order - 1) + getY(direction, order);
     scrollTo({ y: position });
     resetAuto();
   };

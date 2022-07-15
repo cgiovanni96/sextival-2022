@@ -5,10 +5,6 @@ import { motion } from "framer-motion";
 import Panel from "@sextival/components/Panel";
 import { shadows } from "@sextival/theme/shadows";
 
-type Props = {
-  order: number;
-};
-
 const Data = [
   {
     img: "/v2/home/content/home-sextival.png",
@@ -19,11 +15,11 @@ const Data = [
   { img: "/v2/home/content/home-ospiti.png", text: "Lə ospitə", to: "/ospiti" },
 ];
 
-const Content = ({ order = 3 }: Props) => {
+const Content = () => {
   const router = useRouter();
 
   return (
-    <Panel order={order} scrollDown sx={{ marginTop: "5px" }}>
+    <Panel order={3} scrollDown>
       <SimpleGrid
         cols={1}
         spacing="lg"

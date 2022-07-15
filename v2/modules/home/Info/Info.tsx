@@ -5,13 +5,9 @@ import { DivRef } from "@sextival/types/react";
 import Guide from "./Guide";
 import Program from "./Program";
 
-type Props = {
-  order: number;
-};
-
-const Info = ({ order = 2 }: Props) => {
+const Info = () => {
   return (
-    <Panel order={order} scrollDown sx={{ marginTop: "5px" }}>
+    <Panel order={2} scrollDown>
       <Guide />
 
       <Space h="xl" />

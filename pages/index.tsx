@@ -4,6 +4,7 @@ import Head from "next/head";
 import Hero from "@sextival/modules/home/Hero";
 import Info from "@sextival/modules/home/Info";
 import Content from "@sextival/modules/home/Content";
+import Text from "@sextival/modules/home/Text";
 
 const Home: NextPage = () => {
   return (
@@ -17,9 +18,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/logo-ico.ico" />
       </Head>
 
-      <Hero order={1} />
-      <Info order={2} />
-      <Content order={3} />
+      <Hero />
+      <Info />
+      <Content />
+      <Text />
     </>
   );
 };
