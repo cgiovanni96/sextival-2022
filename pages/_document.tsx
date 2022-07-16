@@ -1,13 +1,37 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 import React from "react";
 
-import { createGetInitialProps } from "@mantine/next";
+import { createStylesServer, ServerStyles } from "@mantine/next";
+import cache from "@sextival/theme/cache";
 
-const getInitialProps = createGetInitialProps();
-
+// const getInitialProps = createGetInitialProps();
+const stylesServer = createStylesServer(cache);
 export default class MyDocument extends Document {
-  static getInitialProps = getInitialProps;
+  // static getInitialProps = getInitialProps;
 
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    // Add your app specific logic here
+
+    return {
+      ...initialProps,
+      styles: [
+        initialProps.styles,
+        <ServerStyles
+          html={initialProps.html}
+          server={stylesServer}
+          key="styles"
+        />,
+      ],
+    };
+  }
   render() {
     return (
       <Html>
