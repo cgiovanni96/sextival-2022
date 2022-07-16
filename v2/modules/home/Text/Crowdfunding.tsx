@@ -32,7 +32,7 @@ const CrowdfundingGo = () => {
 
 export const Crowdfunding = () => {
   return (
-    <Section variants={variants} sx={{ marginTop: 70 }}>
+    <Section variants={variants}>
       <Title text={"Sostienici"} right={<CrowdfundingGo />} />
 
       <Space h="xs" />

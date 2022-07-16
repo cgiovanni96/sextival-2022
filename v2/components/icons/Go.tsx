@@ -1,10 +1,10 @@
-type Props = {
-  color?: string;
-  size?: number;
-  strokeWidth?: number;
-};
+import { EqualSizeIcon } from "./icon.type";
 
-export const Go = ({ color = "#000", size = 24, strokeWidth = 1 }: Props) => {
+export const Go = ({
+  color = "#000",
+  size = 24,
+  strokeWidth = 1,
+}: EqualSizeIcon) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,3 +1,5 @@
+import { UnequalSizeIcon } from "./icon.type";
+
 type Props = {
   color?: string;
   width?: number;
@@ -7,16 +9,15 @@ type Props = {
 
 export const Nassa = ({
   color = "rgba(255,255,255,0.6)",
-  width,
-  height,
+  size,
   strokeWidth = 2,
-}: Props) => {
+}: UnequalSizeIcon) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 188.99 235.33"
-      width={width}
-      height={height}
+      width={size && size.width}
+      height={size && size.height}
       stroke={color}
       strokeWidth={strokeWidth}
       fill="none"

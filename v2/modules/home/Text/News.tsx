@@ -13,10 +13,8 @@ const Data = [
 ];
 
 export const News = () => {
-  const { colors } = useMantineTheme();
-
   return (
-    <Section variants={variants}>
+    <Section variants={variants} amount={0.4}>
       <Title
         text={"Notizie dal Sexystaff"}
         right={

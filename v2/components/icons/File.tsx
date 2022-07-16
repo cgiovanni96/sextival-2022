@@ -1,19 +1,19 @@
-type Props = {
-  color?: string;
-  size?: number;
-  strokeWidth?: number;
-};
+import { EqualSizeIcon } from "./icon.type";
 
-export const File = ({ color, size, strokeWidth }: Props) => {
+export const File = ({
+  color = "#000",
+  size = 24,
+  strokeWidth = 1,
+}: EqualSizeIcon) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size ? size : 24}
-      height={size ? size : 24}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
-      stroke={color ? color : "#000"}
-      strokeWidth={strokeWidth ? strokeWidth : 1}
+      stroke={color}
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
     >

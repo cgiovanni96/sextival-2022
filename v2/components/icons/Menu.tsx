@@ -1,15 +1,14 @@
-type Props = { color?: string };
+import { EqualSizeIcon } from "./icon.type";
 
-export const Menu = ({ color }: Props) => {
+export const Menu = ({ color = "#FFF", size = 32 }: EqualSizeIcon) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
-      fill={color ? color : "#FFF"}
-      stroke={color ? color : "#FFF"}
-      onClick={() => console.log("hello")}
+      fill={color}
+      stroke={color}
     >
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>

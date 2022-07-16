@@ -39,7 +39,12 @@ const Panel = ({
     >
       <Box
         component="span"
-        sx={{ position: "absolute", top: 0, bottom: 0, zIndex: -1 }}
+        sx={{
+          position: "absolute",
+          top: 180,
+          bottom: 180,
+          zIndex: 4,
+        }}
         ref={ref}
       />
       {children}

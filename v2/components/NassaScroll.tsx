@@ -21,7 +21,7 @@ export const NassaScroll = ({ variant = "default", scrollAction }: Props) => {
         transition={{ repeat: Infinity, duration: 1, repeatType: "mirror" }}
       >
         <Nassa
-          width={80}
+          size={{ width: 80 }}
           color={variant !== "hero" ? "rgba(85, 0, 38, 0.2)" : undefined}
         />
       </motion.div>
@@ -30,7 +30,7 @@ export const NassaScroll = ({ variant = "default", scrollAction }: Props) => {
         sx={{
           position: "absolute",
           top: "50%",
-          transform: "translate(-5%, -50%)",
+          transform: "translate(5%, -50%)",
           fontSize: 18,
           color: "#550026",
           fontWeight: "bold",
