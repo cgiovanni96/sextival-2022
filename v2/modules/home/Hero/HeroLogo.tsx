@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import { Box } from "@mantine/core";
 import Image from "next/image";
+import { useStyles } from "./hero.styles";
 
 const variants: Variants = {
   offscreen: {
@@ -19,17 +20,17 @@ const variants: Variants = {
 };
 
 export const HeroLogo = () => {
+  const {
+    classes: { logo },
+  } = useStyles({});
+
   return (
     <Box
       component={motion.div}
       variants={variants}
       initial="offscreen"
       animate="onscreen"
-      sx={{
-        width: "90%",
-        height: "400px",
-        position: "relative",
-      }}
+      className={logo}
       mx="auto"
     >
       <Image

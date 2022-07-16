@@ -1,16 +1,12 @@
 import { Title } from "@mantine/core";
+import { useStyles } from "./hero.styles";
 
 export const HeroTitle = ({ text }: { text: string }) => {
+  const {
+    classes: { title },
+  } = useStyles({});
   return (
-    <Title
-      order={1}
-      sx={{
-        fontSize: "48px",
-        lineHeight: "40px",
-        textTransform: "uppercase",
-        textShadow: "0px 4px 4px rgba(0, 0, 0, 0.13)",
-      }}
-    >
+    <Title order={1} className={title}>
       {text}
     </Title>
   );

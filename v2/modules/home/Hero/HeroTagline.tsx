@@ -1,4 +1,5 @@
 import { Box, Title } from "@mantine/core";
+import { useStyles } from "./hero.styles";
 
 const TaglineText = ({
   text,
@@ -9,19 +10,12 @@ const TaglineText = ({
   first?: boolean;
   variant?: boolean;
 }) => {
+  const {
+    classes: { tagline },
+  } = useStyles({ tagline: { first, variant } });
+
   return (
-    <Title
-      order={2}
-      sx={{
-        fontSize: "24px",
-        textTransform: "uppercase",
-        color: variant ? "#090346" : "inherit",
-        lineHeight: "1.4rem",
-        marginBottom: first ? ".3rem" : "none",
-        textAlign: "right",
-        textShadow: "0px 4px 4px rgba(0, 0, 0, 0.13)",
-      }}
-    >
+    <Title order={2} className={tagline}>
       {text}
     </Title>
   );
