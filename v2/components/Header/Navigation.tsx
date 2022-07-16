@@ -1,5 +1,6 @@
 import { Anchor, Box, useMantineTheme } from "@mantine/core";
 import Link from "next/link";
+import { useStyles } from "./header.styles";
 
 const NavigationRoutes = [
   { path: "/", text: "Home" },
@@ -16,21 +17,12 @@ type Props = {
 export const Navigation = ({ isPastHeroSection }: Props) => {
   const theme = useMantineTheme();
 
+  const {
+    classes: { navigation },
+  } = useStyles({});
+
   return (
-    <Box
-      sx={{
-        zIndex: 20,
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        marginTop: "60px",
-        display: "flex",
-        flexDirection: "column",
-      }}
-      px={20}
-    >
+    <Box px={20} className={navigation}>
       {NavigationRoutes.map((route, i) => (
         <Link key={route.text} href={route.path} passHref>
           <Anchor

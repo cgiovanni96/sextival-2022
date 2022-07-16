@@ -7,6 +7,7 @@ import { variants } from "./Header.variants";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import { usePosition } from "./usePosition";
+import { useStyles } from "./header.styles";
 
 const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -14,6 +15,10 @@ const Header = () => {
   const [_, setScrollLocked] = useScrollLock();
 
   const { height, y, isPastHeroSection } = usePosition();
+
+  const {
+    classes: { drawer },
+  } = useStyles({});
 
   return (
     <motion.nav
@@ -26,14 +31,7 @@ const Header = () => {
         component={motion.div}
         variants={variants}
         custom={{ height, scroll: y }}
-        sx={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          bottom: 0,
-          width: "100vw",
-          zIndex: 9,
-        }}
+        className={drawer}
       />
 
       <MenuToggle
