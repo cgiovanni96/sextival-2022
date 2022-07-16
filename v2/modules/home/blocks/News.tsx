@@ -2,9 +2,10 @@ import { Fragment } from "react";
 import { Box, Button, Space, Text, useMantineTheme } from "@mantine/core";
 
 import { Go } from "@sextival/components/icons/Go";
-import { variants } from "../Info/info.variants";
 import Section from "@sextival/components/Section";
 import { Title } from "@sextival/components/Section/Title";
+
+import { variants } from "../variants";
 
 const Data = [
   { date: "16/05", title: "Rossella Bianca non partecipara' al Sextival" },

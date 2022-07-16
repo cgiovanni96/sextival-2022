@@ -2,9 +2,9 @@ import { Box, Space, Text, useMantineTheme } from "@mantine/core";
 import { motion } from "framer-motion";
 
 import { Go } from "@sextival/components/icons/Go";
-import { variants } from "../Info/info.variants";
 import { Title } from "@sextival/components/Section/Title";
 import Section from "@sextival/components/Section";
+import { variants } from "../variants";
 
 const CrowdfundingGo = () => {
   const { colors } = useMantineTheme();

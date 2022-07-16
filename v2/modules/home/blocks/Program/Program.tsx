@@ -2,7 +2,8 @@ import { Space } from "@mantine/core";
 import { useState } from "react";
 
 import Section, { Title } from "@sextival/components/Section";
-import { variants } from "../info.variants";
+
+import { variants } from "../../variants";
 
 import { Pills } from "./Pills";
 import { Data } from "./data.mock";

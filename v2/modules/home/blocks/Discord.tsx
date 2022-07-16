@@ -1,20 +1,24 @@
-import { Box, Button, Paper, Stack, Text } from "@mantine/core";
-import { Nassa, Discord as DiscordIcon } from "@sextival/components/icons";
+import { Button, Paper, Stack, Text } from "@mantine/core";
+import { Discord as DiscordIcon } from "@sextival/components/icons";
+import { useResponsive } from "@sextival/hooks/useResponsive";
 import { shadows } from "@sextival/theme/shadows";
 import { motion } from "framer-motion";
+import { variants } from "../variants";
 
 export const Discord = () => {
+  const isLg = useResponsive({});
+
   return (
     <Paper
       component={motion.div}
-      //   variants={variants}
+      variants={variants}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
+      viewport={{ once: true, amount: 0.2 }}
       shadow={shadows.box}
       radius="md"
       p="sm"
-      mt={80}
+      mt={!isLg ? 80 : "inherit"}
       sx={{
         minHeight: 120,
         color: "#090346",

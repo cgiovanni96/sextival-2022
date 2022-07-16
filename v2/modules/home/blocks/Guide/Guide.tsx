@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { File, Nassa } from "@sextival/components/icons";
 import { shadows } from "@sextival/theme/shadows";
 
-import { variants } from "../info.variants";
+import { variants } from "../../variants";
+
 import { GuideDownload } from "./GuideDownload";
 import { useStyles } from "./guide.styles";
 
