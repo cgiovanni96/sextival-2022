@@ -7,8 +7,11 @@ import { shadows } from "@sextival/theme/shadows";
 
 import { variants } from "../info.variants";
 import { GuideDownload } from "./GuideDownload";
+import { useStyles } from "./guide.styles";
 
 const Guide = () => {
+  const { classes } = useStyles();
+
   return (
     <Paper
       component={motion.div}
@@ -20,34 +23,13 @@ const Guide = () => {
       radius="md"
       p="xl"
       mt={80}
-      sx={{
-        height: 200,
-        color: "#090346",
-        width: "100%",
-        background: "#F7F7F7",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        position: "relative",
-      }}
+      className={classes.guide}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <Nassa height={160} color={"rgba(223, 86, 107, 0.18)"} />
+      <Box className={classes.background}>
+        <Nassa size={{ height: 160 }} color={"rgba(223, 86, 107, 0.18)"} />
       </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
+      <Box className={classes.container}>
         <File size={42} color="#DC3B49" />
 
         <Text
@@ -55,7 +37,7 @@ const Guide = () => {
           color="#DC3B49"
           align="center"
           weight={500}
-          sx={{ flex: 1, lineHeight: 1 }}
+          sx={{ lineHeight: 1 }}
         >
           Ecco la guida al
           <Text weight={700} color="#550026" size={22} sx={{ lineHeight: 1.1 }}>

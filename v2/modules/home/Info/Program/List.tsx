@@ -5,12 +5,19 @@ import { ProgramType } from "./data.mock";
 
 import { Item } from "./Item";
 
+import { useMediaQuery } from "@mantine/hooks";
+import { useMantineTheme } from "@mantine/core";
+import { media } from "@sextival/theme/utils";
+
 type Props = {
   program: ProgramType;
 };
 
 export const List = ({ program }: Props) => {
   const [embla, setEmbla] = useState<Embla | undefined>(undefined);
+
+  const { breakpoints } = useMantineTheme();
+  const query = useMediaQuery(media(breakpoints.lg, false), false);
 
   useEffect(() => {
     embla?.scrollTo(0);
@@ -21,7 +28,7 @@ export const List = ({ program }: Props) => {
       withControls={false}
       withIndicators
       align="start"
-      slideSize="66%"
+      slideSize={query ? "33%" : "66%"}
       slideGap="md"
       getEmblaApi={setEmbla}
       sx={{ paddingBottom: 50 }}

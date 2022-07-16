@@ -17,7 +17,7 @@ export const useStyles = createStyles((theme, param: PanelStylesParam) => ({
     position: "relative",
     marginTop: param.panel?.variant === "default" ? 5 : 0,
     [media(theme.breakpoints.lg)]: {
-      padding: "0 10%",
+      padding: "0 15%",
     },
   },
 
