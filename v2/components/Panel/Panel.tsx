@@ -2,6 +2,8 @@ import { Box, Sx } from "@mantine/core";
 
 import { Children } from "src/types";
 import { NassaScroll } from "../NassaScroll";
+import { useStyles } from "./panel.styles";
+import { ScrollingIndicator } from "./ScrollingIndicator";
 
 import { useScrollPanel } from "./useScrollPanel";
 
@@ -21,32 +23,12 @@ const Panel = ({
 }: Props) => {
   const { ref, moveTo } = useScrollPanel({ order });
 
+  const { classes } = useStyles({ panel: { variant } });
+
   return (
-    <Box
-      sx={(theme) => ({
-        height: "100vh",
-        maxWidth: "100vw",
-        display: "flex",
-        flexDirection: "column",
-        padding: "0 20px",
-        position: "relative",
-        marginTop: variant === "default" ? 5 : 0,
-        ...sx,
-        [`@media (min-width: ${theme.breakpoints.lg}px)`]: {
-          padding: "0 10%",
-        },
-      })}
-    >
-      <Box
-        component="span"
-        sx={{
-          position: "absolute",
-          top: 180,
-          bottom: 180,
-          zIndex: 4,
-        }}
-        ref={ref}
-      />
+    <Box className={classes.panel} sx={sx}>
+      <ScrollingIndicator ref={ref} />
+
       {children}
 
       {scrollDown && (
