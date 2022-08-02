@@ -32,11 +32,11 @@ export const Discord = () => {
     >
       <Stack
         sx={{
+          flex: 1,
           alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        {/* <DiscordIcon size={40} /> */}
-
         <Text
           size={22}
           color="#090346"

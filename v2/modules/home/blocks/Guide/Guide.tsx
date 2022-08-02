@@ -9,9 +9,11 @@ import { variants } from "../../variants";
 
 import { GuideDownload } from "./GuideDownload";
 import { useStyles } from "./guide.styles";
+import { useResponsive } from "@sextival/hooks/useResponsive";
 
 const Guide = () => {
   const { classes } = useStyles();
+  const isLg = useResponsive({});
 
   return (
     <Paper
@@ -34,21 +36,27 @@ const Guide = () => {
         <File size={42} color="#DC3B49" />
 
         <Text
-          size={22}
+          size={isLg ? 32 : 22}
           color="#DC3B49"
           align="center"
           weight={500}
+          ml={20}
           sx={{ lineHeight: 1 }}
         >
           Ecco la guida al
-          <Text weight={700} color="#550026" size={22} sx={{ lineHeight: 1.1 }}>
+          <Text
+            weight={700}
+            color="#550026"
+            size={isLg ? 32 : 22}
+            sx={{ lineHeight: 1.1 }}
+          >
             Sextival 2022
           </Text>
         </Text>
       </Box>
 
       <Box py={8} sx={{ flex: 1, display: "flex", alignItems: "center" }}>
-        <Text size={14} align="center">
+        <Text size={isLg ? 16 : 14} align="center">
           Nel documento troverai il <b>programma</b>, la <b>mappa</b>, gli{" "}
           <b>stand</b> e il <b>regolamento</b>
         </Text>

@@ -7,7 +7,7 @@ import Guide from "@sextival/modules/home/blocks/Guide";
 import Program from "@sextival/modules/home/blocks/Program";
 import { Discord } from "@sextival/modules/home/blocks/Discord";
 import { useResponsive } from "@sextival/hooks/useResponsive";
-import { Space } from "@mantine/core";
+import { Box, Space } from "@mantine/core";
 import { Pages } from "@sextival/modules/home/blocks/Pages";
 import { Crowdfunding } from "@sextival/modules/home/blocks/Crowdfunding";
 import { News } from "@sextival/modules/home/blocks/News";
@@ -42,9 +42,11 @@ const Home: NextPage = () => {
         {isLg && (
           <>
             <Space h="xl" />
-            <Crowdfunding />
-            <Space h="xl" />
-            <News />
+            <Box sx={{ display: "flex" }}>
+              <Crowdfunding />
+              <Space w="xl" />
+              <News />
+            </Box>
           </>
         )}
       </Panel>

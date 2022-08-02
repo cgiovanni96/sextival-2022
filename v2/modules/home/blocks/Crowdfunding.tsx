@@ -5,6 +5,7 @@ import { Go } from "@sextival/components/icons/Go";
 import { Title } from "@sextival/components/Section/Title";
 import Section from "@sextival/components/Section";
 import { variants } from "../variants";
+import { useResponsive } from "@sextival/hooks/useResponsive";
 
 const CrowdfundingGo = () => {
   const { colors } = useMantineTheme();
@@ -31,19 +32,20 @@ const CrowdfundingGo = () => {
 };
 
 export const Crowdfunding = () => {
+  const isLg = useResponsive({});
   return (
     <Section variants={variants}>
       <Title text={"Sostienici"} right={<CrowdfundingGo />} />
 
       <Space h="xs" />
-      <Text size={14} color="#0C082B">
+      <Text size={isLg ? 16 : 14} color="#0C082B">
         Il Sextival vuole prima di tutto essere una fonte di informazioni per
         chiunque, perché i diritti, anche quelli sessuali, <b>non si pagano</b>.
       </Text>
 
       <Space h="sm" />
 
-      <Text size={14} color="#0C082B">
+      <Text size={isLg ? 16 : 14} color="#0C082B">
         Per questo, abbiamo lanciato una campagna di crowdfunding.{" "}
         <b>Sostieni il Sextival, e scopri i premi!</b>
       </Text>
